@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>竞赛详情</title>
+<link href="./Views/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="./Views/js/jquery-1.11.0.min.js"></script>
+<!-- Custom Theme files -->
+<link href="./Views/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link  rel='stylesheet' type='text/css'>
+<link  rel='stylesheet' type='text/css'>
+<style type="text/css">
+.denglu form{
+	float: right;
+	margin-left: 0.5rem;/*欢迎和注销的位置	*/
+}
+.denglu{
+	margin-top: 0.4rem;
+	
+}
+.denglu form input{
+	font-size: 1.1rem;/*注销按钮大小*/
+}
+.denglu input{
+	font-size: 1.1rem;/*登录按钮大小*/
+	transition: 0.3s ease-in;
+	height: 100%;
+	width: 100%;
+	border: 0px;
+	background-color: #30a9f1;
+}	
+.denglu input:hover{
+	color:black ;
+	background-color: #30a9f1;
+}
+
+#fixedLayer { 
+position:fixed; 
+left: 1150px; 
+top: 700px; 
+width:85px; 
+line-height:30px; 
+background: #30A9F1;; 
+border:2px solid #08E3F9; 
+} 
+
+</style>
+</head>
+<body>
+<!--header start here-->
+<div class="banner-two">
+  <div class="header">
+	<div class="container">
+		 <div class="header-main">
+				<div class="logo">
+					<h2><a href="?">蓝色空间</a></h2>
+				</div>
+				<div class="top-nav">
+				<?php
+					if($isLogin){
+				?>
+					<div class="denglu"> <a href="?a=showLogin"><input type="submit" value="登录" >
+					</a></div>
+				<?php
+					}else{
+				?>
+					<div class="denglu">
+					<b>欢迎您，<?php echo $_SESSION['name']; ?></b>
+					<form method="post" action="?a=logout">
+					<input type="submit" name="submit" value="注销" >
+					</form>
+					</div>
+				<?php
+					}
+				?>
+				<nav class="cl-effect-20">
+					   <span class="menu"> <img src="./Views/images/icon.png" alt=""/></span>
+					<ul class="res">
+					   <li><a href="?" class="active">首页</a></li> 
+						<li><a href="?a=showActivity">空间动态</a></li> 
+						<li><a href="?a=showStudent">学子风采</a></li>
+						<li><a href="?a=showShow">荣誉展示</a></li> 
+						<li><a href="?a=showProject">项目竞赛</a></li>
+						<li><a href="?c=Message&a=showMessage">空间留言</a></li>
+						<?php 
+							if($isAdmin){ 
+						?>
+						<li><a href="?a=showBack">空间管理</a></li>
+						<?php
+							} 
+						?>
+				   </ul>
+				</nav>
+					<!-- script-for-menu -->
+						 <script>
+						   $( "span.menu" ).click(function() {
+							 $( "ul.res" ).slideToggle( 300, function() {
+							 // Animation complete.
+							  });
+							 });
+						</script>
+		        <!-- /script-for-menu -->
+				</div>
+		 <div class="clearfix"> </div>
+	  </div>
+	</div>
+ </div>
+</div>
+<!--header end here-->
+<!--single-->
+
+<div style="padding-top: 10px;padding-left: 10px;font-size: 25px"><a href="?a=showProject"><p><返回</p></a></div>
+<div class="container">
+  <!-- <div class="single"> -->
+    <img class="img-responsive" src="./Views/images/a5.jpg" alt="" style="float:left;margin:2.7em 1.5em">
+    <div style="font-size:3.1em;margin: 1.5em 0.5em;padding-right: 100px;float: right;">
+   	  <a>挑战杯</a>
+      <a href="#Ll"><li>内容简介</li></a>
+      <a href="#L2"><li>项目意义</li></a>
+      <a href="#L3"><li>项目类型</li></a>
+      <a href="#L4"><li>作品申报</li></a>
+      <a href="#L5"><li>常见问题</li></a>
+    </div>
+    <div id="L1" style="width:80%;margin:0 auto;padding-top: 520px;">
+      <div style="text-align: center;color: #0b91f5;padding :30px 0;"><h3>内容简介</h3></div>
+      <p>挑战杯是“挑战杯”全国大学生系列科技学术竞赛的简称，是由共青团中央、中国科协、教育部和全国学联、地方省级人民政府共同主办的全国性的大学生课外学术科技创业类竞赛，承办高校为国内著名大学。“挑战杯”竞赛在中国共有两个并列项目，一个是“挑战杯”全国大学生课外学术科技作品竞赛（大挑）；另一个则是“挑战杯”中国大学生创业计划竞赛（小挑）。这两个项目的全国竞赛交叉轮流开展，每个项目每两年举办一届。“挑战杯”系列竞赛被誉为中国大学生科技创新创业的“奥林匹克”盛会，是目前国内大学生最关注最热门的全国性竞赛，也是全国最具代表性、权威性、示范性、导向性的大学生竞赛。</p>
+      <p>自1989年首届竞赛举办以来，“挑战杯”竞赛始终坚持“崇尚科学、追求真知、勤奋学习、锐意创新、迎接挑战”的宗旨，在促进青年创新人才成长、深化高校素质教育、推动经济社会发展等方面发挥了积极作用，在广大高校乃至社会上产生了广泛而良好的影响，被誉为当代大学生科技创新的“奥林匹克”盛会。</p>
+    </div>
+    <div id="L2" style="width:80%;margin:0 auto;">
+      <div style="text-align: center;color: #0b91f5;padding :30px 0;"><h3>项目意义</h3></div>
+      <p>（1）吸引广大高校学生共同参与的科技盛会。从最初的19所高校发起，发展到1000多所高校参与；从300多人的小擂台发展到200多万大学生的竞技场，“挑战杯”竞赛在广大青年学生中的影响力和号召力显着增强。</br>
+		促进优秀青年人才脱颖而出的创新摇篮。竞赛获奖者中已经产生了两位长江学者，6位国家重点实验室负责人，20多位教授和博士生导师，70%的学生获奖后继续攻读更高层次的学历，近30%的学生出国深造。他们中的代表人物有：第二届“挑战杯”竞赛获奖者、国家科技进步一等奖获得者、中国十大杰出青年、北京中星微电子有限公司董事长邓中翰，第五届“挑战杯”竞赛获奖者、“中国杰出青年科技创新奖”获得者、安徽中科大讯飞信息科技有限公司总裁刘庆峰，第八届、第九届“挑战杯”竞赛获奖者、“中国青年五四奖章”标兵、南京航空航天大学2007级博士研究生胡铃心等。</p>
+	   <p>（2）引导高校学生推动现代化建设的重要渠道。成果展示、技术转让、科技创业，让“挑战杯”竞赛从象牙塔走向社会，推动了高校科技成果向现实生产力的转化，为经济社会发展做出了积极贡献。</br>
+		深化高校素质教育的实践课堂。“挑战杯”已经形成了国家、省、高校三级赛制，广大高校以“挑战杯”竞赛为龙头，不断丰富活动内容，拓展工作载体，把创新教育纳入教育规划，使“挑战杯”竞赛成为大学生参与科技创新活动的重要平台。</p>
+		<p>（3）展示全体中华学子创新风采的亮丽舞台。香港、澳门、台湾众多高校积极参与竞赛，派出代表团参加观摩和展示。竞赛成为两岸四地青年学子展示创新风采的舞台，增进彼此了解、加深相互感情的重要途径。</p>
+    </div>
+    <div id="L3" style="width:80%;margin:0 auto;">
+      <div style="text-align: center;color: #0b91f5;padding :30px 0;"><h3>项目类型</h3></div>
+      <p><b>（1）大学生创业计划竞赛简介</b></p>
+      <p>大学生创业计划竞赛起源于美国，又称商业计划竞赛，是风靡全球高校的重要赛事。它借用风险投资的运作模式，要求参赛者组成优势互补的竞赛小组，提出一项具有市场前景的技术、产品或者服务，并围绕这一技术、产品或服务，以获得风险投资为目的，完成一份完整、具体、深入的创业计划。</p>
+      <p>“挑战杯”大学生创业计划竞赛采取学校、省（自治区、直辖市）和全国三级赛制，分预赛、复赛、决赛三个赛段进行。大力实施"科教兴国"战略，努力培养广大青年的创新、创业意识，造就一代符合未来挑战要求的高素质人才，已经成为实现中华民族伟大复兴的时代要求。作为学生科技活动的新载体，创业计划竞赛在培养复合型、创新型人才，促进高校产学研结合，推动国内风险投资体系建立方面发挥出越来越积极的作用。</p>
+      <p><b>（2）课外学术科技作品竞赛简介</b></p>
+      <p>参加“挑战杯”大学生课外学术科技作品竞赛的作品一般分为<b>三大类：自然科学类学术论文、社会科学类社会调查报告和学术论文、科技发明制作</b>，凡在举办竞赛终审决赛的当年7月1日起前正式注册的全日制非成人教育的各类高等院校的在校中国籍本专科生和硕士研究生、博士研究生（均不含在职研究生）都可申报参赛。每个学校选送参加竞赛的作品总数不得超过6件（每人只限报一件作品）、作品中研究生的作品不得超过3件，其中博士研究生作品不得超过1件。各类作品先经过省级选拔或发起院校直接报送至组委会，再由全国评审委员会对其进行预审，并最终评选出80%左右的参赛作品进入终审，终审的结果是，参赛的三类作品各有特等奖、一等奖、二等奖、三等奖、且分别约占该类作品总数的3%、8%、24%和65%。</p>
+      <p><b>全民挑战杯</b>：与社会媒体紧密合作，打造综合电视、广播、报纸、周刊、网络、微博等载体的立体传媒平台，挖掘“挑战杯”内涵，推广“挑战杯”文化，以新锐的创意触动公众心灵，以广泛的传播扩大赛事影响，以社会的美誉彰显青年责任，让“挑战杯”走出校园、走向社会，成为全民关注、全民参与的国家盛事。</p>
+      <p><b>全球挑战杯</b>：向全世界的青年大学生发出邀请，吸引来自全球各地的著名高校参加竞赛，举办国际大学生创业夏令营、创业大讲堂等活动，让中国成为全球创业青年的向往之地，让“挑战杯”引领世界的目光。</p>
+      <p><b>全体验挑战杯</b>：推动大学校区、城市社区、创业园区的三区联动，调动各类社会资源，为参赛选手提供包括意识培育、技能训练、项目咨询、苗圃孵化、投资融资等在内的全体验式赛事服务，让“挑战杯”参赛经历成为青年学子的真实创业体验。</p>
+      <p><b>绿色挑战杯</b>：秉持节约办赛的原则，在赛事组织的全过程倡导环保、低碳、生态的“绿色”理念，通过节能减排、低碳交通、省电节水、循环利用、低耗高效等方式，贯彻落实科学发展观，将创业与绿色完美结合，让大学生成为“绿色”生活方式和发展模式的倡导者与践行者。</p>
+      <p><b>实战挑战杯</b>：坚持实战导向，通过调整赛制（首次将作品分为已创业与未创业两类）、完善规则（对已创业作品给予加分）、多元评审（提高来自企业界、投资界的评委比例）等方式，推动“挑战杯”由学术导向型向实战导向型转变，并通过专属的优惠政策，扶持优秀创业项目与团队落地运营。</p>
+      <p><b>可持续挑战杯</b>：总结“挑战杯”办赛经验，规范“挑战杯”工作体系，努力形成竞赛网络（永久官网）、园区基地（创业园区）、风投基金（专属投资基金）等长效机制，实现“挑战杯”的可持续发展，让“挑战杯”真正成为推动创业教育、支持创业实践的“加速器”。</p>
+      <p></p>
+      <p></p>
+      <p></p>
+      </div>
+	<div id="L4" style="width:80%;margin:0 auto;">
+	<div style="text-align: center;color: #0b91f5;padding :30px 0;"><h3>作品申报</h3></div>
+	<p>1．申报方式</br>
+本届竞赛的作品申报方式将以网络申报为主，纸质申报为辅。作者本人申报、学校、省级组委会、全国组委会审核均在网上进行。6月11日后，参赛学生、参赛高校及省级组委会可登录竞赛官方网站<a href ="http://www.tiaozhanbei.net/" style="text-decoration: underline;">（www.tiaozhanbei.net）</a>，按导航提示进行网上申报操作。</p>
+	<p>2．申报程序</br>
+	（1）      作者申报</br>
+参赛学校团委负责组织本校参赛团队以作品报备时注册的用户名登录竞赛官方网站进行申报。学生必须在网上填写团队信息、作品信息，并根据需要上传商业计划书、附加材料、图片等资料，经确认后在线提交，提交材料将作为评审工作的重要参考。为保证竞赛的公平、公正，所有网络申报及纸质申报商业计划书均须隐去作者及学校信息。</br>
+（2）      学校审核</br>
+参赛高校根据全国组委会授予的帐户和密码登录竞赛官方网站，在网上审核本校参赛作品，并在线提交省级组委会。同时在线导出作品申报表，加盖相关公章后连同商业计划书一起报送至省级组委会。其中，申报表和商业计划书要求分开装订，一式六份，封面采用230克A4纸，正文采用70克A4纸。
+每校作品不得超过3件，每人（每个团队）限报1件作品。对于跨校组队参赛团队，须经所在高校团委事先协商明确竞赛团队的申报单位并提供书面说明。</br>
+（3）      省级审核</br>
+省级组委会根据全国组委会授予的帐户和密码登录竞赛官方网站，在网上审核本地选送作品，并于6月20日前在线提交给全国组委会。同时，对纸质版申报表和商业计划书审核后，加盖相关公章。</br>
+（4）      全国组委会审核</br>
+全国组委会根据《关于组织开展第八届“挑战杯”中国大学生创业计划竞赛的通知》要求，对各省级组委会申报作品进行资格审核，没有通过资格审核的项目将取消参赛资格。</br>
+	<p>3．时间安排</br>
+作品网上申报时间为6月11日—6月15日，6月16日—6月19日为各省作品集中修改时间。请各地严格按照时间要求，做好作品申报工作。
+6月20日前，各省级组委会严格按照作品数额分配表的规定，通过特快专递的方式将纸质版申报表、商业计划书及《第八届“挑战杯”中国大学生创业计划竞赛参赛作品汇总表》（含纸质版及电子版）报送全国组委会办公室（地址：********，邮编：******，电子邮箱：******），寄出截止日期以当地邮戳为准。组委会审核阶段：6月20日—6月25日。</p>
+	</div>
+  <div id="L5" style="width:80%;margin:0 auto;">
+	<div style="text-align: center;color: #0b91f5;padding :30px 0;"><h3>常见问题</h3></div>
+	<p> 1 . 已创业类项目的界定</br>
+已创业类项目需同时满足以下条件：</br>
+（1）拥有或授权拥有产品或服务，</br>
+（2）2012年2月28日以前在工商、民政等政府部门注册登记为企业、个体工商户、民办非企业单位等组织形式，</br>
+（3）法人代表或经营者（个体工商户营业执照上为经营者）为2012年7月1日以前正式注册的全日制非成人教育的各类高等院校在校专科生、本科生、硕士研究生和博士研究生（均不含在职研究生） </p>
+	<p>2 . 网络申报及纸质申报商业计划书（含正文和附件）均须隐去作者及学校信息</br>
+例如你是同济大学的参赛团队，在网络申报及纸质申报商业计划书（含正文和附件）中均不可出现你们团队成员姓名、同济大学、指导老师（若技术是某老师所有，也不可以出现他的名字）信息，包含文字及图片（某些奖状、专利、软件著作权等证书扫描件上会有学校信息），但是可以出现地域名称如上海、出版物名称如《同济大学学报》（比如你的技术成果在这个学报上发表）。此举是为了为保证竞赛的公平、公正，如果不掩盖，全国组委会审核将不会通过。</br></p>
+      <p>以上只能作为参考，不同届可能会有所变动。</p>
+	</div>
+</div>
+
+<div id="fixedLayer">
+	<a href="#">↑返回顶部↑</a>
+</div>						
+<!--//single-->
+<!--footer start here-->
+<div class="footer">
+	<div class="container">
+		<div class="footer-main" style="text-align: center;">
+		    <div class="row">
+		    <div class="col-md-4 ftr-grid">
+		    	<h4><a href="#">返回顶部</a></h4>
+		    </div>
+		    <div class="col-md-4 ftr-grid">
+		    	<h4><a href="#">联系我们</a></h4>
+		    	<input type="text" value="
+请留下您的建议" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '
+请留下您的建议';}" style="margin-top: 2rem; ">
+		    	<input type="submit" value="提交">
+		    </div>
+		    <div class="col-md-4 ftr-grid">
+		    	<h4><a href="?a=showRegister">加入我们</a></h4>
+		    </div>
+		    </div>
+			<div class="clearfix"> </div>
+		</div>
+		<div class="copy-right">
+			   <p>版权所有 © 浙江科技学院 support@zust.edu.cn 浙ICP备11051284号<br> 地址：浙江·杭州市留和路318号 邮编：310023</p>
+		   </div>
+	</div>
+</div>
+<!--footer end here-->
+</body>
+</html>

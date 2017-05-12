@@ -1,0 +1,224 @@
+
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	background-color: #fff;
+}
+A {
+	text-decoration: none
+}
+A:link {
+	color: #282828; text-decoration: none
+}
+A:visited {
+	color: #282828; text-decoration: none
+}
+A:hover {
+	color: #ff5900; text-decoration: underline
+}
+A:active {
+	color: #ff5900; text-decoration: underline
+}
+.menu_a:link {
+	color: #ffffff; text-decoration: none
+}
+.menu_a:visited {
+	color: #ffffff; text-decoration: none
+}
+.menu_a:hover {
+	color: #ffffff; text-decoration: underline
+}
+.menu_big_a:link {
+	font-weight: bold; font-size: 14px; color: #ffffff; text-decoration: none
+}
+.menu_big_a:visited {
+	font-weight: bold; font-size: 14px; color: #ffffff; text-decoration: none
+}
+.menu_big_a:hover {
+	font-weight: bold; font-size: 14px; color: #ffffff; text-decoration: none
+}
+.menu_big_b:link {
+	font-weight: bold; font-size: 14px; color: #3c3c3c; text-decoration: none
+}
+.menu_big_b:visited {
+	font-weight: bold; font-size: 14px; color: #3c3c3c; text-decoration: none
+}
+.menu_big_b:hover {
+	font-weight: bold; font-size: 14px; color: #3c3c3c; text-decoration: none
+}
+.menu_tb {
+	color: #ffffff; background-color: #ff5a01
+}
+IMG {
+	border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px
+}
+TD {
+	font: 100% "微软雅黑",Verdana,Helvetica,Arial,sans-serif;
+}
+TT｛
+	font: 100% "微软雅黑",Verdana,Helvetica,Arial,sans-serif;background: #30a9f1;
+｝
+TH {
+	font-size: 12px
+}
+.pers_tb {
+	border-right: #c9c9c9 1px solid; border-left: #c9c9c9 1px solid
+}
+.bg_color {
+	background-color: #f0f0f0
+}
+.bgcolor_02 {
+	background-color: #ff5900
+}
+.bgcolor_03 {
+	background-color: #e5e5e5
+}
+.bgcolor_04 {
+	background-color: #f8f8f8
+}
+.bgcolor_05 {
+	background-color: #ffffff
+}
+.border_01 {
+	border-bottom: #e8e8e8 2px solid
+}
+.font14bold {
+	padding-left: 15px; font-weight: bold; font-size: 14px; color: #ffffff; PADDING-TOP: 2px; background-color: #ff5900
+}
+.comp_tb {
+	border-right: #c9c9c9 1px solid; border-left: #c9c9c9 1px solid
+}
+.info_tb {
+	border-right: #c9c9c9 1px solid; border-left: #c9c9c9 1px solid
+}
+.table_H {
+	border-right: #ff6801 1px solid; border-top: #ff6801 1px; border-left: #ff6801 1px solid; border-bottom: #ff6801 1px solid
+}
+.table_W {
+	border-right: #fa961e 1px solid; border-top: #fa961e 1px; border-left: #fa961e 1px solid; border-bottom: #fa961e 1px solid
+}
+.pt12 {
+	font-size: 12px; color: #333333; line-height: 20px; text-decoration: none
+}
+.menu_main {
+	font-size: 12px; background-image: url(http://www.liecai.com/rencai1/images/default/menu/mbg.gif); color: #000000; text-decoration: underline
+}
+.menu_sec {
+	font-size: 12px; color: #ffffff; background-color: #ff6800; text-decoration: none
+}
+.menu_sec2 {
+	font-size: 12px; color: #ffffff; background-color: #ffb200; text-decoration: none
+}
+.menu_sec3 {
+	font-size: 12px; color: #ffffff; background-color: #728bb0; text-decoration: none
+}
+.menu_sec4 {
+	font-size: 12px; color: #ffffff; background-color: #b57a00; text-decoration: none
+}
+.menu_sec5 {
+	font-size: 12px; color: #ffffff; background-color: #ff9900; text-decoration: none
+}
+.menu_space {
+	background-color: #ffffff
+}
+.rowline_false {
+	border-bottom: #999999 1px dotted
+}
+.tableborder {
+	border-right: #ffffff 1px solid; border-top: #ffffff 1px solid; border-left: #ffffff 1px solid; border-bottom: #ffffff 1px solid; background-color: #efefef
+}
+.categround {
+	font-weight: normal; color: #ffffff; background-color: #ff6800
+}
+.titleground {
+	font-weight: normal; color: #000000; background-color: #f0f0f0
+}
+.contentground {
+	color: #000000; word-break: break-all; background-color: #ffffff
+}
+.changeground {
+	color: #000000; word-break: break-all; background-color: #f8f8f8
+}
+.lineline {
+	border-right: #ffffff 1px solid; background-color: #ffffff
+}
+.tableborder2 {
+	border-right: #ffb200 1px solid; border-top: #ffb200 1px solid; border-left: #ffb200 1px solid; border-bottom: #ffb200 1px solid; background-color: #efefef
+}
+.categround2 {
+	font-weight: normal; color: #ffffff; background-color: #ffb200
+}
+.titleground2 {
+	font-weight: normal; color: #000000; background-color: #f0f0f0
+}
+.contentground2 {
+	color: #000000; word-break: break-all; background-color: #ffffff
+}
+.changeground2 {
+	color: #000000; word-break: break-all; background-color: #f8f8f8
+}
+.lineline2 {
+	border-right: #ffb200 1px solid; background-color: #ffffff
+}
+.tableborder3 {
+	border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px; background-color: #efefef
+}
+.categround3 {
+	font-weight: normal; color: #ffffff; background-color: #728bb0
+}
+.titleground3 {
+	font-weight: normal; color: #000000; background-color: #f0f0f0
+}
+.contentground3 {
+	color: #000000; word-break: break-all; background-color: #ffffff
+}
+.changeground3 {
+	color: #000000; word-break: break-all; background-color: #f8f8f8
+}
+.lineline3 {
+	border-right: #728bb0 1px solid; background-color: #ffffff
+}
+.tableborder4 {
+	border-right: #cccccc 1px solid; border-top: #cccccc 1px solid; border-left: #cccccc 1px solid; border-bottom: #cccccc 1px solid; background-color: #ffffff
+}
+.categround4 {
+	font-weight: normal; color: #000000; background-color: #ededed
+}
+.titleground4 {
+	font-weight: normal; color: #000000; background-color: #f0f0f0
+}
+.contentground4 {
+	color: #000000; word-break: break-all; background-color: #ffffff
+}
+.changeground4 {
+	color: #000000; word-break: break-all; background-color: #f8f8f8
+}
+.lineline4 {
+	border-right: #b57a00 1px solid; background-color: #ffffff
+}
+.article_title {
+	font-weight: bold; font-size: 24px; color: #000000; word-break: break-all; font-family: Tahoma,Verdana
+}
+.textground {
+	font-size: 14px; color: #000000; word-break: break-all; line-height: 25px; font-family: Tahoma,Verdana
+}
+.tableborder_footer {
+	border-right: #ffffff 1px solid; border-top: #ffffff 1px solid; border-left: #ffffff 1px solid; border-bottom: #ffffff 1px solid; background-color: #efefef
+}
+.titleground_footer {
+	color: #ffffff; background-color: #666666
+}
+.contentgrond_footer {
+	color: #000000; background-color: #ffffff
+}
+.info_tb {
+	font-size: 12px; color: #666666; line-height: 22px
+}
+.mainTable {
+	background-color: #ff5a01
+}
+
+.STYLE2 {
+       font-family: 'Minijanxixingkai';
+}

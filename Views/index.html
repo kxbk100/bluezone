@@ -1,0 +1,305 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>浙江科技学院蓝色空间</title>
+<link href="./Views/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="./Views/js/jquery-1.11.0.min.js"></script>
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link rel="stylesheet" href="./Views/css/flexslider.css" type="text/css" media="screen" />
+<style type="text/css">
+#picture {
+	 transition-duration: 0.4s;
+	 height: 9rem;
+
+}
+#picture:hover{
+	height: 10rem;
+
+}
+.pic{
+	height: 8rem;
+}
+.denglu form{
+	float: right;
+	margin-left: 0.5rem;/*欢迎和注销的位置	*/
+}
+.denglu{
+	margin-top: 0.4rem;
+	
+}
+.denglu form input{
+	font-size: 1.1rem;/*注销按钮大小*/
+}
+.denglu input{
+	font-size: 1.1rem;/*登录按钮大小*/
+	transition: 0.3s ease-in;
+	height: 100%;
+	width: 100%;
+	border: 0px;
+	background-color: #30a9f1;
+}	
+.denglu input:hover{
+	color:black ;
+	background-color: #30a9f1;
+	
+
+}
+
+</style>
+</head>
+<body style="font-family: 'Microsoft Yahei'">
+<!--header start here-->
+ <div class="header" style="height: 110px">
+	<div class="container">
+<link href="./Views/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+		 <div class="header-main">
+				<div class="logo">
+					<h2><a href="?">蓝色空间</a></h2>
+				</div>
+				<div class="top-nav">
+				<?php
+					if($isLogin){
+				?>
+					<div class="denglu"> <a href="?a=showLogin"><input type="submit" value="登录" >
+					</a></div>
+				<?php
+					}else{
+				?>
+					<div class="denglu">
+					<b>欢迎您，<?php echo $_SESSION['name']; ?></b>
+					<form method="post" action="?a=logout">
+					<input type="submit" name="submit" value="注销" >
+					</form>
+					</div>
+				<?php
+					}
+				?>
+				<nav class="cl-effect-20">
+					   <span class="menu"> <img src="./Views/images/icon.png" alt=""/></span>
+					<ul class="res">
+					   <li><a href="?" class="active">首页</a></li> 
+						<li><a href="?a=showActivity">空间动态</a></li> 
+						<li><a href="?a=showStudent">学子风采</a></li>
+						<li><a href="?a=showShow">荣誉展示</a></li> 						
+						<li><a href="?a=showProject">项目竞赛</a></li>
+						<li><a href="?c=Message&a=showMessage">空间留言</a></li>
+						<?php 
+							if($isAdmin){ 
+						?>
+						<li><a href="?a=showBack">空间管理</a></li>
+						<?php
+							} 
+						?>
+				   </ul>
+				</nav>
+				
+					<!-- script-for-menu -->
+						 <script>
+						   $( "span.menu" ).click(function() {
+							 $( "ul.res" ).slideToggle( 300, function() {
+							 // Animation complete.
+							  });
+							 });
+						</script>
+		        <!-- /script-for-menu -->
+				</div>
+			 <div class="clearfix"> </div>
+	  </div>
+	</div>
+ </div>
+ <div class="banner">
+ 	<div class="container">
+		 <div class="banner-bottom">
+            <div class="slider">
+               <section class="slider">
+                  <div class="flexslider">
+                    <ul class="slides">
+                      <li>
+	                      <div class="col-md-4 banner-left">
+		    	             <h3></br><span class="bann-sli-text">Our</span> <span class="bann-sli-text">Space</span></h3>
+	                      </div>
+	                       <div class="col-md-8 banner-right">
+	                          <img  class="img-responsive" src="./Views/images/h1.jpg" alt="">
+	                      	</div>
+	                       <div class="clearfix"> </div>
+  	    		     </li>
+ 	    		     <li>
+	                      <div class="col-md-4 banner-left">
+		    	            <h3> <br><span class="bann-sli-text"> Our</span> <span class="bann-sli-text">Space</span></h3>
+	                      </div>
+	                       <div class="col-md-8 banner-right">
+	                          <img  class="img-responsive" src="./Views/images/h2.jpg" alt="">
+	                      	</div>
+	                       <div class="clearfix"> </div>
+  	    		     </li>
+  	    		      <li>
+	                      <div class="col-md-4 banner-left">
+		    	            <h3> <br><span class="bann-sli-text"> Our </span> <span class="bann-sli-text">Space</span></h3>
+	                      </div>
+	                       <div class="col-md-8 banner-right">
+	                          <img  class="img-responsive" src="./Views/images/h3.jpg" alt="">
+	                      	</div>
+	                       <div class="clearfix"> </div>
+  	    		     </li>
+                 </ul>
+           </div>
+      </section>
+			  <!-- <script>window.jQuery || document.write('<script src="./Views/js/libs/jquery-1.7.min.js">\x3C/script>')</script> -->
+			  <!--FlexSlider-->
+			  <script defer src="./Views/js/jquery.flexslider.js"></script>
+			  <script type="text/javascript">
+			    $(function(){
+			     
+			    });
+			    $(window).load(function(){
+			      $('.flexslider').flexslider({
+			        animation: "slide",
+			        start: function(slider){
+			          $('body').removeClass('loading');
+			        }
+			      });
+			    });
+			  </script>
+			</div>
+		 </div>
+		 <span class="mover"> </span>
+  </div>
+  </div>
+<!--header end here-->
+<!--banner-strip start here-->
+<div class="bann-strip">
+	<div class="container">
+		<div class="bann-strip-main">
+
+		<?php
+			for($i=$count-1;$i>=$count-4&&$i>=0;$i--){
+			$arr = $result[$i];
+		?>
+			  <div class="col-md-3 bann-grid">
+			  	 <a href="?a=showMore&id=<?php echo $arr['id'];?>"><img alt="" class="img-responsive" src=<?php echo $arr['small_image']; ?> ></a>
+			  	 <div class="details" style="background-color: #fff">
+			  	 	<h4><a href="?a=showMore&id=<?php echo $arr['id'];?>"><?php echo $arr['title']; ?></a></h4>
+			  	 	<p><?php echo $arr['description']; ?></p>
+			  	 	<a class="bannn-btn" href="?a=showMore&id=<?php echo $arr['id'];?>" >查看详情</a>
+			  	 </div>
+			  </div>
+		<?php
+			}
+		?>
+
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<!--banner strip end here-->
+
+<!--services start here-->
+<div class="services">
+	<div class="container">
+		<div class="services-main" style="background-color:#fff;height: 17rem;">
+			  <h2 style="height: 44px;padding-top: 10px">&nbsp;&nbsp;荣誉墙</h2>
+
+			<?php
+				for($i=$count2-1;$i>=$count2-4&&$i>=0;$i--){
+				$arr = $result2[$i];
+			?>
+			<div class="col-md-3 ser-grid ">
+				<a href="?a=showShow"><div class="pic"><img id="picture" src=<?php echo $arr['small_image']; ?>></div></a>
+			</div>
+			<?php
+				}
+			?>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<!--services end here-->
+<!--news start here-->
+<div class="news" style="width: 1170px;margin:auto;padding-bottom:3em;">
+<!-- <div class="mask opacity" style=></div> -->
+<html>
+ <head></head>
+ <body>
+  <div class="container" style="z-index:1000;padding-left: 50px"> 
+   <div class="news-main"> 
+    <div class="col-md-4 news-left"> 
+     <h3>优秀成员</h3> 
+     <img src="./Views/images/y1.jpg" alt="" class="img-responsive" /> 
+     <div style="width: 285px;float: left;"><p style="text-align: center;">陈璇(信息与计算科学133班)</p></div> 
+    </div> 
+    <div class="col-md-8 news-right" style="padding-top: 55px"> 
+     <div class="col-md-4 news-grid"> 
+      <h6>2016<br />10.07</h6> 
+      <p> 2016年获浙江科技学院“年度人物”提名奖称号。<br /> 2015年获浙江科技学院理学院“璀璨之星”称号。<br /> 2015年获浙江科技学院“年度人物”提名奖称号。<br /> </p> 
+     </div> 
+     <div class="col-md-4 news-grid"> 
+      <h6>2015<br />10.07</h6> 
+      <p>2015年参加在全国大学生数学建模竞赛中获校一等奖。<br />2015年参加浙江省大学生物流设计大赛获校一等奖。<br /> 2015年作品“每十云课堂”获全国计算机设计竞赛省三等奖。</p> 
+     </div> 
+     <div class="col-md-4 news-grid"> 
+      <h6>2015<br />10.07</h6> 
+      <p> 2015年参与浙江省大学生科技创新活动计划（新苗）“互联网+合乘模式下智能出租匹配系统”。<br /> 2015年作品“基于移动端的响应式微课学习平台开发”获第十四届全国大学生课外学术科技作品竞赛校三等奖。<div style="float: right;margin-top: -15.2px;"><a href="?a=showStudent">查看更多</a></div> </p> 
+     </div> 
+     <div class="clearfix"> 
+     </div> 
+    </div> 
+    <div class="clearfix"> 
+    </div> 
+   </div> 
+  </div> 
+ </body>
+</html>
+<!--news end here-->
+<!--can help srart here-->
+<div class="can-help" style="position: relative;">
+  <div class="container" style="padding-top: 0em">
+    <div class="can-help-main">
+      <div class="col-md-6 can-help-left" style="padding-left: 70;position: relative;right: 1rem;">
+        <img src="./Views/images/h4.jpg" alt="" class="img-responsive"></div>
+      <div class="col-md-6 can-help-right" style="background-color: #fff;height:393px;text-indent: 2em;">
+			   	<h4 style="text-indent:5em;"><a href="single.html">蓝色空间简介</a></h4>
+			   	<p>蓝色空间(软件设计)是劲竹书院精英俱乐部实践基地，信息学院信息化竞赛培训基地，于2015年年初组建，2016年书院文化节授牌。</p>
+			   	<p>培养目的：蓝色空间通过组织和引导广大学生开展信息化学科竞赛、科技创新等实践活动，激发学生对软件技术的兴趣爱好，培养学生的科学素养，增强学生的创新意识，提高学生的创新能力，为科院培养互联网+人才提供基础平台。</p>
+			   	<p>培养模式：通过对大学生新生选拔挑选软件设计预备人才，实施导师制模式，由导师引导创建学生团队，培养期间，定期邀请校内外软件设计专家学者进行专业讲座，通过传帮带方式提高新生的设计能力，邀请专业指导老师进行详细介绍和辅导。</p>
+			   	
+<!-- 			   	<a class="help-btn" href="single.html"></a> -->
+			   </div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<!--can help end here-->
+<!--footer start here-->
+<div class="footer">
+	<div class="container">
+		<div class="footer-main" style="text-align: center;">
+		    <div class="row">
+		    <div class="col-md-4 ftr-grid">
+		    	<h4><a href="#">返回顶部</a></h4>
+		    </div>
+		    <div class="col-md-4 ftr-grid">
+		    	<h4><a href="#">联系我们</a></h4>
+		    	<input type="text" value="
+请留下您的建议" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '
+请留下您的建议';}" style="margin-top: 2rem; ">
+		    	<input type="submit" value="提交">
+		    </div>
+		    <div class="col-md-4 ftr-grid">
+		    	<h4><a href="?a=showRegister">加入我们</a></h4>
+		    </div>
+		    </div>
+			<div class="clearfix"> </div>
+		</div>
+		<div class="copy-right">
+			   <p>版权所有 © 浙江科技学院 support@zust.edu.cn 浙ICP备11051284号<br> 地址：浙江·杭州市留和路318号 邮编：310023</p>
+		   </div>
+	</div>
+</div>
+<!--footer end here-->
+</body>
+</html>

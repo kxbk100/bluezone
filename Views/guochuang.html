@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>项目详情</title>
+<link href="./Views/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="./Views/js/jquery-1.11.0.min.js"></script>
+<!-- Custom Theme files -->
+<link href="./Views/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link  rel='stylesheet' type='text/css'>
+<link  rel='stylesheet' type='text/css'>
+<style type="text/css">
+.denglu form{
+	float: right;
+	margin-left: 0.5rem;/*欢迎和注销的位置	*/
+}
+.denglu{
+	margin-top: 0.4rem;
+	
+}
+.denglu form input{
+	font-size: 1.1rem;/*注销按钮大小*/
+}
+.denglu input{
+	font-size: 1.1rem;/*登录按钮大小*/
+	transition: 0.3s ease-in;
+	height: 100%;
+	width: 100%;
+	border: 0px;
+	background-color: #30a9f1;
+}	
+.denglu input:hover{
+	color:black ;
+	background-color: #30a9f1;
+}
+
+#fixedLayer { 
+position:fixed; 
+left: 1150px; 
+top: 700px; 
+width:85px; 
+line-height:30px; 
+background: #30A9F1;; 
+border:2px solid #08E3F9; 
+} 
+
+</style>
+</head>
+<body>
+<!--header start here-->
+<div class="banner-two">
+  <div class="header">
+	<div class="container">
+		 <div class="header-main">
+				<div class="logo">
+					<h2><a href="?">蓝色空间</a></h2>
+				</div>
+				<div class="top-nav">
+				<?php
+					if($isLogin){
+				?>
+					<div class="denglu"> <a href="?a=showLogin"><input type="submit" value="登录" >
+					</a></div>
+				<?php
+					}else{
+				?>
+					<div class="denglu">
+					<b>欢迎您，<?php echo $_SESSION['name']; ?></b>
+					<form method="post" action="?a=logout">
+					<input type="submit" name="submit" value="注销" >
+					</form>
+					</div>
+				<?php
+					}
+				?>
+				<nav class="cl-effect-20">
+					   <span class="menu"> <img src="./Views/images/icon.png" alt=""/></span>
+					<ul class="res">
+					   <li><a href="?" class="active">首页</a></li> 
+						<li><a href="?a=showActivity">空间动态</a></li> 
+						<li><a href="?a=showStudent">学子风采</a></li>
+						<li><a href="?a=showShow">荣誉展示</a></li> 
+						<li><a href="?a=showProject">项目竞赛</a></li>
+						<li><a href="?c=Message&a=showMessage">空间留言</a></li>
+						<?php 
+							if($isAdmin){ 
+						?>
+						<li><a href="?a=showBack">空间管理</a></li>
+						<?php
+							} 
+						?>
+				   </ul>
+				</nav>					<!-- script-for-menu -->
+						 <script>
+						   $( "span.menu" ).click(function() {
+							 $( "ul.res" ).slideToggle( 300, function() {
+							 // Animation complete.
+							  });
+							 });
+						</script>
+		        <!-- /script-for-menu -->
+				</div>
+		 <div class="clearfix"> </div>
+	  </div>
+	</div>
+ </div>
+</div>
+<!--header end here-->
+<!--single-->
+
+<div style="padding-top: 10px;padding-left: 10px;font-size: 25px;width: 80px"><a href="?a=showProject"><p><返回</p></a></div>
+<div class="container">
+  <!-- <div class="single"> -->
+    <img class="img-responsive" src="./Views/images/a3.jpg" alt="" style="float:left;margin:2.7em 1.5em">
+    <div style="font-size:3.1em;margin: 1.5em 0.5em;float: right;">
+   	  <a>国创计划</a>
+      <a href="#Ll"><li>计划内容</li></a>
+      <a href="#L2"><li>计划目标</li></a>
+      <a href="#L3"><li>经费支持</li></a>
+      <a href="#L4"><li>申报条件及对象</li></a>
+      <a href="#L5"><li>申报程序及限额数</li></a>
+    </div>
+    <div id="L0" style="width:80%;margin:0 auto;padding-top: 550px;">
+      <div style="text-align: center;color: #0b91f5;padding :30px 0;"><h3>国家级大学生创新创业训练计划</h3></div>
+      <p>根据《教育部 财政部关于“十二五”期间实施“高等学校本科教学质量与教学改革工程”的意见》（教高〔2011〕6号）和《教育部关于批准实施“十二五”期间“高等学校本科教学质量与教学改革工程”2012年建设项目的通知》（教高函〔2012〕2号），教育部决定在“十二五”期间实施国家级大学生创新创业训练计划。</p>
+    </div>
+    <div id="L1" style="width:80%;margin:0 auto;">
+      <div style="text-align: center;color: #0b91f5;padding :30px 0;"><h3>一、计划内容</h3></div>
+      <p>（一）国家级大学生创新创业训练计划内容包括创新训练项目、创业训练项目和创业实践项目三类。</p>
+      <p>创新训练项目是本科生个人或团队，在导师指导下，自主完成创新性研究项目设计、研究条件准备和项目实施、研究报告撰写、成果（学术）交流等工作。</p>
+       <p>（二）创业训练项目是本科生团队，在导师指导下，团队中每个学生在项目实施过程中扮演一个或多个具体的角色，通过编制商业计划书、开展可行性研究、模拟企业运行、参加企业实践、撰写创业报告等工作。</p>
+       <p>（三）创业实践项目是学生团队，在学校导师和企业导师共同指导下，采用前期创新训练项目（或创新性实验）的成果，提出一项具有市场前景的创新性产品或者服务，以此为基础开展创业实践活动。</p>
+    </div>
+    <div id="L2" style="width:80%;margin:0 auto;">
+      <div style="text-align: center;color: #0b91f5;padding :30px 0;"><h3>二、计划目标</h3></div>
+      <p>通过实施国家级大学生创新创业训练计划，促进高等学校转变教育思想观念，改革人才培养模式，强化创新创业能力训练，增强高校学生的创新能力和在创新基础上的创业能力，培养适应创新型国家建设需要的高水平创新人才。</p>
+      </div>
+    <div id="L3" style="width:80%;margin:0 auto;">
+      <div style="text-align: center;color: #0b91f5;padding :30px 0;"><h3>三、经费支持</h3></div>
+      <p>国家级大学生创新创业训练计划面向中央部委所属高校和地方所属高校。中央部委所属高校直接参加，地方所属高校由地方教育行政部门推荐参加。</p>
+      <p>国家级大学生创新创业训练计划由中央财政、地方财政共同支持，参与高校按照不低于1:1的比例，自筹经费配套。中央部委所属高校参与国家级大学生创新创业训练计划，由中央财政按照平均一个项目1万元的资助数额，予以经费支持。地方所属高校参加国家级大学生创新创业训练计划，由地方财政参照中央财政经费支持标准予以支持。各高校可根据申报项目的具体情况适当增减单个项目资助经费。对中央部委所属高校创业实践项目，每个项目经费不少于10万元，其中，中央财政经费应资助5万元左右。</p>
+      <p>中央部委所属高校分为A、B、C 三组（名单见附件）。2012年，中央财政经费支持A组高校各200项，B组高校各150项，C组高校各70项。为保持学生项目的连续性，各高校可以将2012年的部分项目名额用于支持各校2011年已经立项的学生项目。2013年及以后各年的实际项目数额，将根据上一年的年度评价决定。鼓励各参与高校利用自主科研经费或其它自筹经费，增加立项项目。</p>
+    </div>
+	<div id="L4" style="width:80%;margin:0 auto;">
+	<div style="text-align: center;color: #0b91f5;padding :30px 0;"><h3>四、申报条件及对象</h3></div>
+	<p>（一）申请人应为全省普通高等学校的在校本科学生个人或创新团队（项目主持人在毕业前完成项目结题；已立项未结题的项目主持人不能申报2017年项目），鼓励跨院系、跨专业、跨年级组建团队申报项目，团队参与学生数应控制在5人以内。申请者必须品学兼优、学有余力、有较强的独立思考能力、创新意识和研究探索精神，对科学研究、科技活动或社会实践有浓厚的兴趣。鼓励跨学科、跨年级合作研究，同等条件下优先资助团队合作项目和跨学科、跨年级合作项目。跨学院的项目，由第一申请者所在学院申报，学生只能申报或参与1个项目，未结题的项目主持人不能申报本年度项目。目前已结题或获奖的省级大学生创新项目（新苗计划）、省挑战杯竞赛项目和省级学科竞赛项目，在原有研究基础上可继续深入研究的，允许申报；已获得国家级奖励或省级资助尚未结题的项目不得参与申报。</p>
+	<p>（二）项目组须由学生选定或学院配备指导教师1-2名，学院应遴选责任心强、学术水平高、学风正派、治学严谨的教学科研人员担任指导教师。指导教师需具备副高级以上职称或中级职称研究生学历或曾指导学生在校级以上（含校级竞赛）学科竞赛中获奖，鼓励项目特别是创业训练和创业实践项目聘请优秀企业家或行业专家担任指导教师。指导教师在全程起辅导作用，负责指导以学生为主的训练项目实施。同一个指导教师指导的在研项目不能超过2个。 </p>
+	<p>（三）申报项目选题要求思路新颖，目标明确，具有创新性和探索性，研究方案可行，经费预算合理。项目研究周期一般为1-2年。申报者要对研究方案进行可行性分析，并在实施过程中不断调整优化。 </p>
+	</div>
+  <div id="L5" style="width:80%;margin:0 auto;">
+	<div style="text-align: center;color: #0b91f5;padding :30px 0;"><h3>五、申报程序及限额数</h3></div>
+	<p>（一）项目负责人提出申请，填写《国家级大学生创新创业训练计划项目申报书》，指导教师审阅并签署意见，提交所在二级学院。 </p>
+	<p>（二）二级学院组织专家委员会对本学院的申请项目进行评审。主要审查项目的科学性、创新性、可行性、研究计划、经费预算，申请者的研究能力以及项目实施的条件等。创新训练项目，各二级学院原则上申报2-6项；创业训练项目和创业实践项目，各二级学院原则上申报1-2项。二级学院将评审的项目分类进行排序，二级学院院长签字并盖学院章后，将结果报创新创业学院。</p>
+	<p>（三）创新创业学院会同教务处、团委、学生处组织专家委员会对二级学院报送的项目进行评审，遴选出25项省级和国家级训练计划项目。评审决议通过的项目在校园网上公示，公示无异议的项目报省教育厅。 </p>
+	</div>
+</div>
+
+<div id="fixedLayer">
+	<a href="#">↑返回顶部↑</a>
+</div>							
+<!--//single-->
+<!--footer start here-->
+<div class="footer">
+	<div class="container">
+		<div class="footer-main" style="text-align: center;">
+		    <div class="row">
+		    <div class="col-md-4 ftr-grid">
+		    	<h4><a href="#">返回顶部</a></h4>
+		    </div>
+		    <div class="col-md-4 ftr-grid">
+		    	<h4><a href="#">联系我们</a></h4>
+		    	<input type="text" value="
+请留下您的建议" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '
+请留下您的建议';}" style="margin-top: 2rem; ">
+		    	<input type="submit" value="提交">
+		    </div>
+		    <div class="col-md-4 ftr-grid">
+		    	<h4><a href="?a=showRegister">加入我们</a></h4>
+		    </div>
+		    </div>
+			<div class="clearfix"> </div>
+		</div>
+		<div class="copy-right">
+			   <p>版权所有 © 浙江科技学院 support@zust.edu.cn 浙ICP备11051284号<br> 地址：浙江·杭州市留和路318号 邮编：310023</p>
+		   </div>
+	</div>
+</div>
+<!--footer end here-->
+</body>
+</html>

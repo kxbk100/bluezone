@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>项目详情</title>
+<link href="./Views/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="./Views/js/jquery-1.11.0.min.js"></script>
+<!-- Custom Theme files -->
+<link href="./Views/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--Google Fonts-->
+<link href='https://fonts.googleapis.com/css?family=Baumans' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
+<style type="text/css">
+.denglu form{
+	float: right;
+	margin-left: 0.5rem;/*欢迎和注销的位置	*/
+}
+.denglu{
+	margin-top: 0.4rem;
+	
+}
+.denglu form input{
+	font-size: 1.1rem;/*注销按钮大小*/
+}
+.denglu input{
+	font-size: 1.1rem;/*登录按钮大小*/
+	transition: 0.3s ease-in;
+	height: 100%;
+	width: 100%;
+	border: 0px;
+	background-color: #30a9f1;
+}	
+.denglu input:hover{
+	color:black ;
+	background-color: #30a9f1;
+}
+
+#fixedLayer { 
+position:fixed; 
+left: 1150px; 
+top: 700px; 
+width:85px; 
+line-height:30px; 
+background: #30A9F1;; 
+border:2px solid #08E3F9; 
+} 
+
+</style>
+</head>
+<body>
+<!--header start here-->
+<div class="banner-two">
+  <div class="header">
+	<div class="container">
+		 <div class="header-main">
+				<div class="logo">
+					<h2><a href="?">蓝色空间</a></h2>
+				</div>
+				<div class="top-nav">
+				<?php
+					if($isLogin){
+				?>
+					<div class="denglu"> <a href="?a=showLogin"><input type="submit" value="登录" >
+					</a></div>
+				<?php
+					}else{
+				?>
+					<div class="denglu">
+					<b>欢迎您，<?php echo $_SESSION['name']; ?></b>
+					<form method="post" action="?a=logout">
+					<input type="submit" name="submit" value="注销" >
+					</form>
+					</div>
+				<?php
+					}
+				?>
+				<nav class="cl-effect-20">
+					   <span class="menu"> <img src="./Views/images/icon.png" alt=""/></span>
+					<ul class="res">
+					   <li><a href="?" class="active">首页</a></li> 
+						<li><a href="?a=showActivity">空间动态</a></li> 
+						<li><a href="?a=showStudent">学子风采</a></li>
+						<li><a href="?a=showShow">荣誉展示</a></li> 
+						<li><a href="?a=showProject">项目竞赛</a></li>
+						<li><a href="?c=Message&a=showMessage">空间留言</a></li>
+						<?php 
+							if($isAdmin){ 
+						?>
+						<li><a href="?a=showBack">后台管理</a></li>
+						<?php
+							} 
+						?>
+				   </ul>
+				</nav>
+					<!-- script-for-menu -->
+						 <script>
+						   $( "span.menu" ).click(function() {
+							 $( "ul.res" ).slideToggle( 300, function() {
+							 // Animation complete.
+							  });
+							 });
+						</script>
+		        <!-- /script-for-menu -->
+				</div>
+		 <div class="clearfix"> </div>
+	  </div>
+	</div>
+ </div>
+</div>
+<!--header end here-->
+<!--single-->
+<div style="padding-top: 10px;padding-left: 10px;font-size: 25px;width: 100px"><a href="?a=showProject"><p><返回</p></a></div>
+<div class="container">
+  <!-- <div class="single"> -->
+    <img class="img-responsive" src="./Views/images/a2.jpg" alt="" style="float:left;margin:2.7em 1.5em">
+    <div style="font-size:3.1em;margin: 0.8em 0.5em;float: right;">
+   	  <a>浙江省新苗人才计划</a>
+      <a href="#Ll"><li>建设目标</li></a>
+      <a href="#L2"><li>管理机构</li></a>
+      <a href="#L3"><li>资金使用原则</li></a>
+      <a href="#L4"><li>申报条件及对象</li></a>
+      <a href="#L5"><li>项目申报与管理</li></a>
+      <a href="#L6"><li>项目经费管理</li></a>
+    </div>
+    <div id="L0" style="width:80%;margin:0 auto;padding-top: 550px;">
+      <div style="text-align: center;color: #0b91f5;padding :30px 0;"><h3>浙江省大学生科技创新活动计划
+（新苗人才计划）实施办法（试行）</h3></div>
+      <p>深入实施科教兴省和人才强省战略，加快培养我省高校大学生的实践能力和创新创业能力，造就一大批经济社会发展急需的紧缺人才和拔尖创新人才，为“创业富民、创新强省”总战略的实施提供人才支撑，省教育厅、省科技厅、团省委与省财政厅决定在全省高等学校联合实施浙江省大学生科技创新活动计划（新苗人才计划）。</p>
+    </div>
+    <div id="L1" style="width:80%;margin:0 auto;">
+      <div style="text-align: center;color: #0b91f5;padding :30px 0;"><h3>一、建设目标</h3></div>
+      <p>以大学生科技创新项目、大学生科技成果推广项目、大学生创新创业孵化项目为载体，不断加大对大学生创新创业的扶持力度。积极倡导和鼓励大学生进行自主性学习和创新性研究，开展多种形式的创新创业实践，努力增强大学生的创新意识和创新精神，切实提高大学生的创新创业能力和实践动手能力，为大学生创新创业提供良好的环境，培育和发现优秀的创新创业项目和人才。</p>
+    </div>
+    <div id="L2" style="width:80%;margin:0 auto;">
+      <div style="text-align: center;color: #0b91f5;padding :30px 0;"><h3>二、管理机构</h3></div>
+      <p>为加强管理，省成立实施办公室、项目专家委员会，学校成立相应管理机构。</p>
+      <p>（一）实施办公室</br>省教育厅、省科技厅、团省委、省财政厅等四家主办单位联合成立浙江省大学生科技创新活动计划（新苗人才计划）实施办公室（简称“实施办公室”）。省教育厅、省科技厅负责协调与指导工作，省财政厅负责项目经费管理，团省委负责具体组织和日常管理工作。</p>
+      <p>（二）项目专家委员会</br>大学生科技创新项目、大学生科技成果推广项目、大学生创新创业孵化项目分别成立项目专家委员会，成员由有关高校、院所、行业、企业的代表组成，负责具体项目的评审、中期检查和验收等。</p>
+      <p>（三）学校管理机构</br>各高校成立相应的管理机构，制定大学生科技创新活动计划（新苗人才计划）项目实施细则及切实可行的管理办法和配套政策，负责本单位项目的指导工作，为项目的开展提供包括人才、技术、法律、资金、设备和实验场地等综合资源支持。</p>
+      </div>
+    <div id="L3" style="width:80%;margin:0 auto;">
+      <div style="text-align: center;color: #0b91f5;padding :30px 0;"><h3>三、资金使用原则</h3></div>
+      <p>（一）项目导向原则</br>
+		以项目为载体，引导大学生积极开展多种形式的创新创业活动，提高大学生创新创业能力。</p>
+      <p>（二）以学生为本原则</br>
+	科技创新资金的支持对象为在校大学生，积极鼓励大学生申请科技创新资金开展创新创业活动。</p>
+      <p>（三）鼓励创新原则</br>
+	  为鼓励大学生大胆进行创新创业活动，允许创新创业活动失败，重在考核创新创业实践过程。</p>
+    </div>
+	<div id="L4" style="width:80%;margin:0 auto;">
+	<div style="text-align: center;color: #0b91f5;padding :30px 0;"><h3>四、申报条件及对象</h3></div>
+	<p>（一）申报条件</br>
+		1.项目申报人必须是浙江省高校全日制在校大学生，项目必须在本省的行政区域内实施。项目可采取个人或团队形式申报，团队每组人数不超过5人。鼓励专业交叉融合。</br>
+		2.项目实施周期原则上不超过一年（大学生创新创业孵化项目期限一般为两年）。项目完成时间必须在项目申报人毕业离校前。</br>
+		3.申报项目必须包含实质性的科技成果，或者具有一定应用价值和商业潜力的创新创业创意。项目无知识产权归属纠纷。</br></p>
+	<p>（二）申报对象</br>
+		1.大学生科技创新项目。申报对象为在校本专科生及其团队。旨在培育一批大学生创新研究成果。</br>
+		2.大学生科技成果推广项目。申报对象为在校本专科生、研究生及其团队。旨在培育一批具有一定应用价值和商业潜力的科技成果推广项目。</br>
+		3.大学生创新创业孵化项目。申报对象为在校研究生及其团队。旨在搭建大学生创新创业实践的指导、服务、交流平台，为研究生创业提供良好的场地环境、创业指导和培训等相关服务，培育和发现优质的科技经济项目和高素质的创新人才。</br></p>
+	</div>
+  <div id="L5" style="width:80%;margin:0 auto;">
+	<div style="text-align: center;color: #0b91f5;padding :30px 0;"><h3>五、项目申报与管理</h3></div>
+	<p>（一）项目申报与审批</br>1.学生申报，学校初审。</br>
+	（1）采取限额申报，申报指标由浙江省大学生科技创新计划（新苗人才计划）实施办公室确定。</br>
+	（2）每个项目均应有指导老师，团队指导老师由1-3人组成，指导老师须有中级以上职称。学校应将指导学生科研列为教师考核的一项内容，计算相应的工作量。</br>
+	（3）各高校负责组织有关专家对本单位大学生科技创新活动计划（新苗人才计划）项目进行初审。</br>
+	2.学校上报，项目专家委员会评审，实施办公室审定。</br>
+申报单位须提交项目申报书及相关辅助证明材料。申报资料经学校有关部门签署意见后报送实施办公室。实施办公室组织项目专家委员会进行评审，并确定年度立项项目。</br></p>
+	<p>（二）项目立项与管理</br>1.项目下达</br>
+	实施办公室将当年度立项项目下达给承担学校，由省教育厅、省科技厅、团省委和省财政厅联合发文公布。</br>
+	2.项目实施与管理</br>
+项目申报人为主要负责人，项目负责人原则上不得更换，对研究项目负全责，组织协调项目组全体成员认真执行实施办公室和学校的管理条例，按期保质保量完成项目研究的各项任务。</br>
+	3.项目检查</br>
+各高校定期组织专家和管理人员对项目进行中期或阶段性检查，对取得的阶段性成果和存在问题要高度重视，及时提出整改意见和措施，并不定期向实施办公室汇报项目的进展情况。实施办公室将组织项目专家进行抽查。</p>
+<p>（三）项目结题与验收</br>
+1.项目组在项目结束后，需及时向学校相关管理部门提出验收申请，填写验收申请报告，并提交成果报告、相关技术资料等辅助材料。</br>
+2.根据项目研究期限，学校成立项目结题验收工作小组，对申请验收的项目参照项目申报书及验收申请报告，组织专家对项目实施情况、取得成效和存在问题等进行检查验收，撰写项目验收报告提交实施办公室。</br>
+3.实施办公室组织项目专家委员会进行抽查，抽查结果分为优秀、合格和不合格，并作为下一期计划安排的重要依据。对无正当理由，自行中断的项目，实施办公室将取消该项目计划，追回已拨项目专项经费。对项目管理不力的单位，实施办公室将酌情减少该单位下一期申报指标。</br></p>
+<p>（四）推广与奖励</br>
+经验收通过后的大学生科技创新成果由实施办公室颁发证书。成果作为学生评优、推荐就业的重要依据。实施办公室适时组织成果展或成果交流会。</p>
+	</div>
+	<div id="L6" style="width:80%;margin:0 auto;">
+      <div style="text-align: center;color: #0b91f5;padding :30px 0;"><h3>六、项目经费管理</h3></div>
+      <p>1.大学生科技创新活动计划（新苗人才计划）的每个项目的资助额度一般为5000元左右，对重点项目给予重点支持。项目经费实行国库集中支付，省财政厅根据实施办公室资助项目立项情况，将项目预算下达到相关高等学校。学校要合理确定每个项目的经费，并给予项目不低于1：1的配套经费支持，由承担项目的学生使用，教师不得使用学生科研经费，学校不得提取管理费。</br></p>
+	  <p>2.各高等学校要加强对大学生科技创新资金的管理，专款专用，专账核算。实施办公室对资助经费使用情况进行监督。如发现项目负责人弄虚作假，一经查实，中止项目资助，由省财政厅追回资助经费，取消其今后申请本计划的资格，情节严重者给予通报批评，并按《财政违法行为处罚处分条例》进行查处。</br></p>
+    </div>
+</div>
+
+<div id="fixedLayer">
+	<a href="#">↑返回顶部↑</a>
+</div>							
+<!--//single-->
+<!--footer start here-->
+<div class="footer">
+	<div class="container">
+		<div class="footer-main" style="text-align: center;">
+		    <div class="row">
+		    <div class="col-md-4 ftr-grid">
+		    	<h4><a href="#">返回顶部</a></h4>
+		    </div>
+		    <div class="col-md-4 ftr-grid">
+		    	<h4><a href="#">联系我们</a></h4>
+		    	<input type="text" value="请留下您的建议" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '请留下您的建议';}" style="margin-top: 2rem; ">
+		    	<input type="submit" value="提交">
+		    </div>
+		    <div class="col-md-4 ftr-grid">
+		    	<h4><a href="?a=showRegister">加入我们</a></h4>
+		    </div>
+		    </div>
+			<div class="clearfix"> </div>
+		</div>
+		<div class="copy-right">
+			   <p>版权所有 © 浙江科技学院 support@zust.edu.cn 浙ICP备11051284号<br> 地址：浙江·杭州市留和路318号 邮编：310023</p>
+		   </div>
+	</div>
+</div>
+<!--footer end here-->
+</body>
+</html>

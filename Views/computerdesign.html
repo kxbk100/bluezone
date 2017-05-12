@@ -1,0 +1,223 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>竞赛详情</title>
+<link href="./Views/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="./Views/js/jquery-1.11.0.min.js"></script>
+<!-- Custom Theme files -->
+<link href="./Views/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link  rel='stylesheet' type='text/css'>
+<link  rel='stylesheet' type='text/css'>
+<style type="text/css">
+.denglu form{
+	float: right;
+	margin-left: 0.5rem;/*欢迎和注销的位置	*/
+}
+.denglu{
+	margin-top: 0.4rem;
+	
+}
+.denglu form input{
+	font-size: 1.1rem;/*注销按钮大小*/
+}
+.denglu input{
+	font-size: 1.1rem;/*登录按钮大小*/
+	transition: 0.3s ease-in;
+	height: 100%;
+	width: 100%;
+	border: 0px;
+	background-color: #30a9f1;
+}	
+.denglu input:hover{
+	color:black ;
+	background-color: #30a9f1;
+}
+
+#fixedLayer { 
+position:fixed; 
+left: 1150px; 
+top: 700px; 
+width:85px; 
+line-height:30px; 
+background: #30A9F1;; 
+border:2px solid #08E3F9; 
+} 
+
+</style>
+</head>
+<body>
+<!--header start here-->
+<div class="banner-two">
+  <div class="header">
+	<div class="container">
+		 <div class="header-main">
+				<div class="logo">
+					<h2><a href="?">蓝色空间</a></h2>
+				</div>
+				<div class="top-nav">
+				<?php
+					if($isLogin){
+				?>
+					<div class="denglu"> <a href="?a=showLogin"><input type="submit" value="登录" >
+					</a></div>
+				<?php
+					}else{
+				?>
+					<div class="denglu">
+					<b>欢迎您，<?php echo $_SESSION['name']; ?></b>
+					<form method="post" action="?a=logout">
+					<input type="submit" name="submit" value="注销" >
+					</form>
+					</div>
+				<?php
+					}
+				?>
+				<nav class="cl-effect-20">
+					   <span class="menu"> <img src="./Views/images/icon.png" alt=""/></span>
+					<ul class="res">
+					   <li><a href="?" class="active">首页</a></li> 
+						<li><a href="?a=showActivity">空间动态</a></li> 
+						<li><a href="?a=showStudent">学子风采</a></li>
+						<li><a href="?a=showShow">荣誉展示</a></li> 
+						<li><a href="?a=showProject">项目竞赛</a></li>
+						<li><a href="?c=Message&a=showMessage">空间留言</a></li>
+						<?php 
+							if($isAdmin){ 
+						?>
+						<li><a href="?a=showBack">空间管理</a></li>
+						<?php
+							} 
+						?>
+				   </ul>
+				</nav>
+					<!-- script-for-menu -->
+						 <script>
+						   $( "span.menu" ).click(function() {
+							 $( "ul.res" ).slideToggle( 300, function() {
+							 // Animation complete.
+							  });
+							 });
+						</script>
+		        <!-- /script-for-menu -->
+				</div>
+		 <div class="clearfix"> </div>
+	  </div>
+	</div>
+ </div>
+</div>
+<!--header end here-->
+<!--single-->
+<div style="padding-top: 10px;padding-left: 10px;font-size: 25px;width: 80px"><a href="?a=showProject"><p><返回</p></a></div>
+<div class="container">
+  <!-- <div class="single"> -->
+    <img class="img-responsive" src="./Views/images/a4.jpg" alt="" style="float:left;margin:2.7em 1.5em">
+    <div style="font-size:3.1em;margin: 1.2em 0.5em;float: right;">
+   	  <a style="font-size: 0.8em">中国大学生计算机设计大赛</a>
+      <a href="#Ll"><li>大赛简介</li></a>
+      <a href="#L2"><li>大赛目的</li></a>
+      <a href="#L3"><li>经费支持</li></a>
+      <a href="#L4"><li>参赛介绍</li></a>
+      <a href="#L5"><li>申报程序及限额数</li></a>
+    </div>
+    <div id="L1" style="width:80%;margin:0 auto;padding-top: 500px;">
+      <div style="text-align: center;color: #0b91f5;padding :50px 0;"><h3>大赛简介</h3></div>
+      <p>“中国大学生计算机设计大赛”（下面简称“大赛”）是由教育部高等学校计算机类专业教学指导委员会、教育部高等学校软件工程专业教学指导委员会、教育部高等学校大学计算机课程教学指导委员会、教育部高等学校文科计算机基础教学指导分委员会、中国教育电视台联合主办。</p>
+	  <p>“大赛”的前身是“中国大学生（文科）计算机设计大赛”，始创于2008年。“计算机设计大赛”每年举办一次，决赛时间一般在当年7月至8月。</p>
+    </div>
+    <div id="L2" style="width:80%;margin:0 auto;">
+      <div style="text-align: center;color: #0b91f5;padding :50px 0;"><h3>大赛目的</h3></div>
+      <p>“大赛”的目的是提高大学生综合素质，具体落实教育部高等学校计算机基础课程教学指导委员会编写的《高等学校计算机基础教学发展战略研究报告暨计算机基础课程教学基本要求》，以及教育部高等学校文科计算机基础教学指导委员会编写的《文科类专业大学计算机教学要求》，进一步推动高校本科面向21世纪的计算机教学的知识体系、课程体系、教学内容和教学方法的改革，引导学生踊跃参加课外科技活动，激发学生学习计算机知识技能的兴趣和潜能，为培养德智体美全面发展、具有运用信息技术解决实际问题的综合实践能力、创新创业能力，以及团队合作意识的人才服务。</p>
+      </div>
+    <div id="L3" style="width:80%;margin:0 auto;">
+      <div style="text-align: center;color: #0b91f5;padding :50px 0;"><h3>赛事详情</h3></div>
+      <p>“大赛”作品的计算机设计技术主要是依据理工农医类专业《计算机基础课程教学基本要求》以及《文科类专业大学计算机教学要求》的核心内容。</p>
+      <p>“大赛”的参赛对象是本科各专业学生，即文史哲法教类、经管类、艺术类、理工类、农林类、医药类等六大系列的所有在校学生。</p>
+      <p>全体参与赛事人员（包括选手、教练、评委，以及与大赛相关的其他人员）安全保障措施是“计算机大赛”举办的前提。</p>
+      <p>“大赛”是非营利的公益性的赛事。大赛的生命线与遵从的原则是公开、公平、公正、廉洁。</p>
+      <p>“大赛”内容目前分设软件应用与开发类、微课与课件类、数字媒体设计类普通组、数字媒体设计类专业组、计算机音乐创作类、数字媒体设计类中华民族文化组、软件服务外包类等类组。以后将根据需要适当增设竞赛领域，使各大系列的学生都有充分展示其计算机应用与创作才智的平台。</p>
+      <p>“大赛”过程分初赛和决赛两个阶段，初赛主要通过省级（直辖市、自治区级）预赛和国赛网评的方式筛选作品，决赛采用现场演示和答辩方式。</p>
+      <p>“大赛”的方向是在我国营造一个大学生所信任、欢迎、热爱、向往的大赛。</p> 
+    </div>
+	<div id="L4" style="width:80%;margin:0 auto;">
+	<div style="text-align: center;color: #0b91f5;padding :50px 0;"><h3>参赛介绍</h3></div>
+	<p>一、参赛形式：</br>
+（一）学生自愿组队，每队由1-3名本校本科生组成,可聘请指导教师1名。</br>
+（二）每队自主确定参赛题目和内容，自行开发、设计与创作，但数字媒体设计类的内容要和大赛组委会规定的作品主题一致。</p>
+    <p>二、比赛安排：</br>参加比赛的学生请于2017年3月20日前报名并将“作品设计计划书”电子版文件发送至邮箱：1208603155@qq.com 。校赛组委会将对作品设计计划进行评审，以确定参加校赛比赛的作品并指派老师进行辅导。大赛详细内容可浏览中国大学生计算机设计大赛网站：http://www.jsjds.org ，大赛历届作品案例请参见学校内网ftp://172.16.53.222  。</p>
+    <p>三、比赛内容：</br>根据我校学生情况，拟参加以下类别的比赛：</br>（一）软件应用与开发类：作品主题不限，包括以下小类：</br>
+1、Web应用与开发</br>
+2、管理信息系统</br>
+3、移动应用开发（非游戏类）</br>
+4、物联网与智能设备。</br>
+（二）微课与教学辅助类：作品主题：不限。包括以下小类：</br>
+1.计算机基础与应用类课程微课（或教学辅助课件）</br>
+2.中、小学数学或自然科学课程微课（或教学辅助课件）。</br>
+3.汉语言文学（古汉语、唐诗宋词、散文等，内容限在1911年前）微课（或教学辅助课件）。</br>
+4.虚拟实验平台。</br>
+（三）数字媒体设计类（普通组）：参赛主题：人与动物和谐相处。包括以下小类：</br>
+1.计算机图形图像设计。</br>
+2.数码摄影及照片后期处理。</br>
+3.产品设计。</br>
+4.交互媒体。</br>
+（四）数字媒体设计类（专业组）：参赛主题：人与动物和谐相处。包括以下小类：</br>
+1.计算机图形图像设计。</br>
+2.数码摄影及照片后期处理。</br>
+3.产品设计。</br>
+4.交互媒体。</br>
+（五）数字媒体设计类（动漫游戏组）：主题：人与动物的和谐相处：包括以下小类：</br>
+1.动画。</br>
+2.游戏与交互。</br>
+3.数字漫画。</br>
+4.动漫衍生品（含数字、实体）。</br>
+（六）数字媒体设计类中华优秀传统文化元素（微电影组）（每队参赛人数为1-5人）。
+作品主题： </br> 1.自然遗产、文化遗产、名胜古迹。 2.歌颂中华大好河山的诗词散文。3.优秀的传统道德风尚。4.先秦主要哲学流派（道/儒/墨/法等）与汉语言文学。5.国画、汉字、汉字书法、年画、剪纸、音乐、戏剧、戏曲、曲艺。 包括以下小类： </br>
+1.微电影。 </br>
+2.数字短片。 </br>
+（七）数字媒体设计类中华民族文化元素组。参赛主题：民族建筑，民族服饰，民族手工艺品。包括以下小类：1.计算机图形图像设计。</br>
+2.计算机动画。</br>
+3.交互媒体设计。</p>
+    <p>四、竞赛联系人和咨询与报名地点</br>联系人：楼宋江老师 电话： 13586117695</br>
+        雷运发老师  电话： 13588190826/660826。</br>
+咨询与报名地点：</br>
+安吉校区：   2号楼劲竹书院229（蓝色空间）</br>
+小和山校区： 信息学院 C2-508办公室</br></p>
+	</div>
+</div>
+
+<div id="fixedLayer">
+	<a href="#">↑返回顶部↑</a>
+</div>						
+<!--//single-->
+<!--footer start here-->
+<div class="footer">
+	<div class="container">
+		<div class="footer-main" style="text-align: center;">
+		    <div class="row">
+		    <div class="col-md-4 ftr-grid">
+		    	<h4><a href="#">返回顶部</a></h4>
+		    </div>
+		    <div class="col-md-4 ftr-grid">
+		    	<h4><a href="#">联系我们</a></h4>
+		    	<input type="text" value="
+请留下您的建议" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '
+请留下您的建议';}" style="margin-top: 2rem; ">
+		    	<input type="submit" value="提交">
+		    </div>
+		    <div class="col-md-4 ftr-grid">
+		    	<h4><a href="?a=showRegister">加入我们</a></h4>
+		    </div>
+		    </div>
+			<div class="clearfix"> </div>
+		</div>
+		<div class="copy-right">
+			   <p>版权所有 © 浙江科技学院 support@zust.edu.cn 浙ICP备11051284号<br> 地址：浙江·杭州市留和路318号 邮编：310023</p>
+		   </div>
+	</div>
+</div>
+<!--footer end here-->
+</body>
+</html>

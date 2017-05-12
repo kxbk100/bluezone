@@ -1,0 +1,268 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>竞赛详情</title>
+<link href="./Views/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="./Views/js/jquery-1.11.0.min.js"></script>
+<!-- Custom Theme files -->
+<link href="./Views/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link  rel='stylesheet' type='text/css'>
+<style type="text/css">
+.denglu form{
+	float: right;
+	margin-left: 0.5rem;/*欢迎和注销的位置	*/
+}
+.denglu{
+	margin-top: 0.4rem;
+	
+}
+.denglu form input{
+	font-size: 1.1rem;/*注销按钮大小*/
+}
+.denglu input{
+	font-size: 1.1rem;/*登录按钮大小*/
+	transition: 0.3s ease-in;
+	height: 100%;
+	width: 100%;
+	border: 0px;
+	background-color: #30a9f1;
+}	
+.denglu input:hover{
+	color:black ;
+	background-color: #30a9f1;
+}
+
+#fixedLayer { 
+position:fixed; 
+left: 1150px; 
+top: 700px; 
+width:85px; 
+line-height:30px; 
+background: #30A9F1;; 
+border:2px solid #08E3F9; 
+} 
+
+</style>
+</head>
+<body>
+<!--header start here-->
+<div class="banner-two">
+  <div class="header">
+	<div class="container">
+		 <div class="header-main">
+				<div class="logo">
+					<h2><a href="?">蓝色空间</a></h2>
+				</div>
+				<div class="top-nav">
+				<?php
+					if($isLogin){
+				?>
+					<div class="denglu"> <a href="?a=showLogin"><input type="submit" value="登录" >
+					</a></div>
+				<?php
+					}else{
+				?>
+					<div class="denglu">
+					<b>欢迎您，<?php echo $_SESSION['name']; ?></b>
+					<form method="post" action="?a=logout">
+					<input type="submit" name="submit" value="注销" >
+					</form>
+					</div>
+				<?php
+					}
+				?>
+				<nav class="cl-effect-20">
+					   <span class="menu"> <img src="./Views/images/icon.png" alt=""/></span>
+					<ul class="res">
+					   <li><a href="?" class="active">首页</a></li> 
+						<li><a href="?a=showActivity">空间动态</a></li> 
+						<li><a href="?a=showStudent">学子风采</a></li>
+						<li><a href="?a=showShow">荣誉展示</a></li> 
+						<li><a href="?a=showProject">项目竞赛</a></li>
+						<li><a href="?c=Message&a=showMessage">空间留言</a></li>
+						<?php 
+							if($isAdmin){ 
+						?>
+						<li><a href="?a=showBack">空间管理</a></li>
+						<?php
+							} 
+						?>
+				   </ul>
+				</nav>
+					<!-- script-for-menu -->
+						 <script>
+						   $( "span.menu" ).click(function() {
+							 $( "ul.res" ).slideToggle( 300, function() {
+							 // Animation complete.
+							  });
+							 });
+						</script>
+		        <!-- /script-for-menu -->
+				</div>
+		 <div class="clearfix"> </div>
+	  </div>
+	</div>
+ </div>
+</div>
+<!--header end here-->
+<!--single-->
+
+<div style="padding-top: 10px;padding-left: 10px;font-size: 25px"><a href="?a=showProject"><p><返回</p></a></div>
+<div class="container">
+  <!-- <div class="single"> -->
+    <img class="img-responsive" src="./Views/images/a7.png" alt="" style="float:left;margin:2.7em 1.5em">
+    <div style="font-size:3.1em;margin: 1em 1em;float: right;">
+   	  <a>大学生服创大赛</a>
+      <a href="#Ll"><li>服创简介</li></a>
+      <a href="#L2"><li>具体介绍</li></a>
+      <a href="#L3"><li>参赛要求</li></a>
+      <a href="#L4"><li>评审及奖项说明</li></a>
+      <a href="#L5"><li>常见问题解答</li></a>
+    </div>
+    <div id="L1" style="width:80%;margin:0 auto;padding-top: 520px;">
+      <div style="text-align: center;color: #0b91f5;padding :30px 0;"><h3>服创简介</h3></div>
+      <p>中国大学生服务外包创新创业大赛（以下简称“服创大赛”或“大赛”），是由国家教育部、商务部两部委联合无锡市人民政府主办的年度中国大学生服务外包领域的创新、创业盛会。第一、二届服创⼤赛的名称是“中国大学生服务外包创新应用大赛”。为了增强大赛对于创新创业的引导，从第三届起更名为“中国大学生服务外包创新创业大赛”。</p>
+      <p>服创大赛每年举办一届，2017年即将举办第八届大赛。</p>
+      <p>服创大赛紧贴现代服务经济和创新、创业、创富主题，强调应用导向和产学互动，在服务外包领域搭建一个大学生创新与创业能力展示平台。大赛引导社会公众和青年学生关注现代服务产业，吸引企业关注高校青年学生，促进高校教育改革贴合新兴产业发展需求；创新人才培养和人才评价体系，引导和促进高校加强服务外包才培养，为产业发展营造良好氛围；逐渐成为国内一流，具有国际影响力的服务外包创业青年创新创业展示盛典。</p>
+      <p>往届大赛精彩回顾请参见官方网站<a href="http://www.fwwb.org.cn" style="text-decoration: underline;">（http://www.fwwb.org.cn）</a>。</p>
+    </div>
+    <div id="L2" style="width:80%;margin:0 auto;">
+      <div style="text-align: center;color: #0b91f5;padding :30px 0;"><h3>具体介绍</h3></div>
+      <p>服创大赛竞赛作品要求遵循如下规范：</p>
+      <p><b>(一)产业导向</b></p>
+      <p>以现代服务业为代表的服务经济是我国⼗三五规划中着重发展的战略性产业，是国民经济发展的主导方向。服创大赛以产业为导向，通过服务创新创业推动服务业的转型升级，加快现代服务业的发展，推动城市产业更新的转型发展。</p>
+      <p>大赛作品规范之一，要求参赛作品以最终服务产业为目的，根据实际产业需求提供可操作的解决方案。</p>
+      <p><b>(二)技术导向</b></p>
+      <p>当今时代就是信息技术时代。随着信息化在全球的快速进展，世界对信息的需求快速增长，信息技术和信息服务对于各个国家、地区、企业、单位、家庭、个人都不可缺少。基于信息技术（包括互联网）的创新最活跃、发展最迅猛。信息技术已成为支撑当今经济活动和社会生活的基石。</p>
+      <p>大赛作品规范之二，要求参赛作品必须基于信息技术实现或深刻体现信息技术理念。服创大赛要求参赛选手利用信息技术或互联网思维解决实际问题。</p>
+      <p><b>(三)应用导向</b></p>
+      <p>服创大赛关注解决现实问题。通过创意调查，关心和思考如何改进身边的点滴小事，引导青年学生务实细致、学以致用。</p>
+      <p>大赛作品规范之三，要求参赛作品聚焦于“应用”而非“纯学术”。区别于学术和技能型竞赛，强调一切从现实问题出发。</p></br>
+
+	  <p><b>竞赛分类说明</b></p>
+      <p>第八届服创大赛在以往竞赛类别上做了调整，设置了企业命题类（A类）及创业实践类（B类）竞赛类别。A类侧重企业命题，通过企业发布真实项目需求，由高校提供响应方案的方式，来增加校企结合及提升产业对接；B类侧重创业实践，鼓励更接近创业的团队和项目参赛，要求参赛团队具备创业的可能性甚至已经开始创业实践。</p>
+      <p>第八届大赛企业命题类（A类）赛题主要有以下方向：</p>
+      <p>1）企业服务——企业服务外包，如：法务、财务、人力资源、知识产权、咨询策划、后勤保障、办公协同、软件开发等。</p>
+      <p>2）智能计算——大数据、云计算、人工智能外包，如：数据整理、数据挖掘、数据存储、数据处理、数据应用、数据传输、数据加密等。</p>
+      <p>3）文创娱乐——内容创意以及消费级内容产品，如：动漫、影视、二次元、游戏等。</p>
+      <p>4）消费互联——面向消费者的应用开发及消费升级产品，如：电子商务、品牌设计、消费O2O、大教育、大健康、大消费等。</p>
+      <p>5）智能制造——物联网与工业自动化，如：机器人、视觉智能、3D打印、无人机、设备管理、远程控制、新能源等。</p>
+      <p>6）工业设计——面向工业与硬件产品的设计服务外包，如：智能硬件、视觉设计、平面设计、交互界面、集成电路设计等。</p></br>
+      <p>创业实践类（B类）竞赛要求参赛团队进行商业实践与市场探索，鼓励具有强烈创业意愿的团队参赛。重点考察参赛团队的创业能力和成熟度，侧重考查项目细分领域的竞争力和商业模式的创新性。提交的项目主题须符合相应要求（参见2.1服创大赛竞赛规范）。</p>
+      <p> 项目成果须以DEMO或可交付成果形式提交，项目成果包括：项目概要介绍、商业计划书、项目演示视频、公司简介（可选）、项目知识产权证明（可选）。</p>
+      </div>
+    <div id="L3" style="width:80%;margin:0 auto;">
+      <div style="text-align: center;color: #0b91f5;padding :30px 0;"><h3>参赛要求</h3></div>
+      <p>参赛对象:</br>
+      1) 全国高等学校（本科类和高职高专类院校）具有正式学籍的全日制在校学生（含2017年应届毕业生，本专科、研究生不限）可以组队参赛。</br>
+	2) 上述高校毕业不超过5年（2012年4月1日后毕业）的毕业生可组队参赛。</br>
+	3) 鼓励上述高校教师带队/组队参赛。</br>
+	4) 鼓励其他服务外包企业组队参赛。</br>
+	5) 参赛选手允许跨校组队。</br>
+	6) 禁止不同参赛团队共用队员。</br>
+	7) 每参赛团队队员上限为5人。</br>
+	8) 参赛团队指导老师上限为2人。</br>
+	9) 参赛选手的专业范围和所属学院不限。建议参赛团队选择能力互补、专业背景多样化的选手组队。</p></br>
+	<p>第八届服创大赛采用网络报名方式。参赛团队须登录大赛官网<a href="http://www.fwwb.org.cn" style="text-decoration: underline;">（http://www.fwwb.org.cn）</a>进行报名。经组委会审核并予以通过后，参赛团队方可获得参赛资格。</br>
+	为方便参赛师生联络并咨询相关问题，现公布第八届服创⼤赛组委会秘书处联系方式如下：</br>
+	联系电话：(0510)85389850（⼯作⽇时间9:00-11:00，14:00-16:00）</br>
+	传 真：(0510)85389850</br>
+	电子邮箱：fwwb20090909@163.com</br>
+	地 址：无锡市太湖新城金融一街10号楼6层606室</br>
+	邮 编：214121</br>
+	中国大学生服务外包创新创业大赛组委会</br>
+	大赛官网：<a href="http://www.fwwb.org.cn" style="text-decoration: underline;">http://www.fwwb.org.cn</a></br>
+	官方 QQ：第八届服创大赛教师群（470279866）</br>
+	第八届服创大赛学生群（479124341）</p>
+    </div>
+	<div id="L4" style="width:80%;margin:0 auto;">
+	<div style="text-align: center;color: #0b91f5;padding :30px 0;"><h3>评审及奖项说明</h3></div>
+	<p><b>评审原则</b></p>
+	<p>（1）过程与结果并重</br>
+	服创大赛在评审参赛团队提交的作品同时，也关注参赛团队在作品过程中体现出的意识与素质。</p>
+	<p>（2）重视团队与成员表现</br>
+服创大赛关注团队的表现，团队是现代服务业不可或缺的要素，团队精神是大局意识、协作精神和服务精神的集中体现。以大赛为契机，打造精品团队，培养服务意识，也是大赛最核心的价值体现。
+服创大赛综合考察团队在方案中体现的综合素质与能力评价。着重考虑赛题、工作成果本身与参赛团队具体贡献的关联紧密程度。</p>
+	<p>（3）体现“三创”特色</br>
+服创大赛秉承“创新、创业、创富”的精神，综合考察参赛团队对竞赛主题的
+理解，对客户及市场的深入分析与把握，在业务分析、组织模型、技术方案、
+可行性分析、成本考虑、管理要素等多方面的表现，而不仅是技术的实现。
+服创大赛尤其关注参赛团队在解决方案和答辩交流过程中体现出的管理能
+力、团队合作能力、创新能力、学习能力、问题解决能力和创业精神等。</p></br>
+	<p><b>评审专家组成</b></p>
+	<p>大赛专家主要由企业界、高校界、创投机构界及科研机构等领域专家组成。根据每届大赛参赛团队提交的作品所涉及的技术领域，大赛组委会从专家库中遴选专家组成专家评审团，对参赛作品进行评审。</p>
+	<p>各竞赛类别评委组成特点：</p>
+	<p>企业命题类：企业命题类的专家主要以企业专家为主，辅以高校或科研机构专家。</p>
+	<p>创业实践类：以创投机构或相关专业领域专家为主，辅以其它专家。</p></br>
+	<p><b>评审方式</b></p>
+	<p>服创大赛通过“初赛 材料 评审”、“决赛现场答辩”等多种方式来全方位评价参赛团队的创新能力、思维能力、表达能力等各方面素质。</p>
+	<p>第八届服创大赛初赛阶段以“材料评审”方式为主，决赛阶段综合采用“现场答辩”、“作品展示”等方式组织评审工作。</p></br>
+	<p><b>奖项设置</b></p>
+	<p>第八届服创大赛两类竞赛分别设一、二、三等奖若干，总获奖率约为参赛团队总数的20-30%。</p>
+	<p>1）为鼓励参赛团队对接产业需求，企业命题类获奖比例比创业实践类高10%-15%。</p>
+	<p>2）对于在第八届服创大赛获奖的参赛团队指导教师，根据参赛团队成绩颁发相应指导教师奖。</p>
+	<p>3）对于在第八届服创大赛中表现优异的合作企业，颁发相应奖项。</p>
+	<p>4）对于在第八届服创大赛中取得校企合作成果的高校，颁发相应奖项。</p>
+	</div>
+  <div id="L5" style="width:80%;margin:0 auto;">
+	<div style="text-align: center;color: #0b91f5;padding :30px 0;"><h3>常见问题解答</h3></div>
+	<p>1、服创大赛赛题规范要求中，“服务”和“实体产品”如何区分？</p>
+	<p>答：服创大赛赛题规范要求参赛赛题聚焦于“服务”而非“实体产品”。“服务”与“实
+体产品”之间的区别主要表现如下多个方面或其中之一：</p>
+	<p>存在形式：有形产品是一个具有实体的、独立静态的物质对象，而服务是非实体的、无形的，是一种人为或过程。某些服务可以依托有形产品开展，如：互联网汽车租赁服务。</p>
+	<p>表现形式：有形产品是一种标准化的产品，而服务大多难以标准化，每一类服务都可能与其他同类服务的表现形式有所差异。</p>
+	<p>生产、销售与消费的同时性：有形产品的生产、销售及消费可以完全独立进行，客户不参与生产过程，客户的消费也无需服务提供方参与；而服务的生产、销售和消费是同一个不可分离的过程，客户和服务提供方必须同时参与才能完成。</p>
+	<p>核心价值的产生方式：有形产品的核心价值是在工厂里就已经确定的一种凝聚在产品当中的静态属性，与客户无关；服务的价值是在客户与服务提供方的接触中产生的，它不可能事先被创造出来，是一种动态的属性。</p>
+	<p>存储性：有形产品可以在一定时间内存储；而服务的生产和消费是同时进行的，生产的过程即是消费的过程，不可存储。</p>
+	<p>举例来说，互联网搜索引擎、数字地图导航都是“服务”而非“实体产品”。</p></br>
+	<p>2、创业实践类提交的作品更倾向社会公益性还是侧重可能实现的产值和效益？</p>
+	<p>答：从商业价值的角度考量，创业实践类提交的作品更侧重商业可行性和商业价值。同时鼓励 参赛作品以商业模式解决社会公益性需求。</p></br>
+	<p>3、参赛作品必须依托信息技术实现吗？是否可以依托外力去完成？</p>
+	<p>答：是的。大赛要求以信息技术实现主要考虑两个方面：一是现代信息技术对社会日常生活的渗透作用越来越明显；一是出于对竞赛评审规范性的要求，如果脱离信息技术，评审很难统一标准，同时增加评审的不确定性。但同时，大赛对依托信息技术展示作品的技术复杂度没有要求。能够借助简单的信息技术展示和支撑拥有很大社会价值或商业价值的作品，也可以获得大赛评委的青睐和好评。</p>
+	<p>服创大赛支持参赛团队整合各种资源，包括外力来完成参赛作品。但同时组委会要求，如果提交的作品依托外力完成，需要在所提交材料中进行详尽的说明。否则，在决赛阶段现场答辩环节容易导致评委对参赛选手的误会，反而影响参赛团队的最终成绩。</p></br>
+	<p>4、如果提交的成型作品很大，是要求必须将作品带到决赛现场进行展示吗？</p>
+	<p>答：是的。但如提交项目作品确实很大，从安全和成本等角度出发，经向组委会申请获得许可后，可以采用其它可体现作品效果的展示方式，如：等比例模型、视频剪辑和PPT等。</p></br>
+	<p>5、创业实践类如果已经有成型的产品或者完整的创业方案是否能得到加分？</p>
+	<p>答：肯定会有加分。但是，因为评委不会单独对产品或方案进行评分，而综合考量各项要素进行综合评定，如：团队评价、项目价值、团队与项目之间匹配度等。在参与创业实践类竞赛时，产品的完备度或方的完整性仅仅是其中一个评分项目，由于其它评分项目的表现也占有很重的权重，能否获奖还需综合各方面要素评定。</p></br>
+	<p>6、企业命题类赛题目公布的税前奖金，在实际发放过程中需要扣税吗？</p>
+	<p>答：是的。大赛组委会向获奖团队发放发包型赛题的奖金时，会代扣约26%的税务损耗。获奖团队实际收到的税后奖金约为税前奖金的74%左右。</p></br>
+	</div>
+</div>
+
+<div id="fixedLayer">
+	<a href="#">↑返回顶部↑</a>
+</div>
+						
+<!--//single-->
+<!--footer start here-->
+<div class="footer">
+	<div class="container">
+		<div class="footer-main" style="text-align: center;">
+		    <div class="row">
+		    <div class="col-md-4 ftr-grid">
+		    	<h4><a href="#">返回顶部</a></h4>
+		    </div>
+		    <div class="col-md-4 ftr-grid">
+		    	<h4><a href="#">联系我们</a></h4>
+		    	<input type="text" value="请留下您的Email" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '请留下您的Email';}" style="margin-top: 2rem; ">
+		    	<input type="submit" value="提交">
+		    </div>
+		    <div class="col-md-4 ftr-grid">
+		    	<h4><a href="?a=showRegister">加入我们</a></h4>
+		    </div>
+		    </div>
+			<div class="clearfix"> </div>
+		</div>
+		<div class="copy-right">
+			   <p>版权所有 © 浙江科技学院 support@zust.edu.cn 浙ICP备11051284号<br> 地址：浙江·杭州市留和路318号 邮编：310023</p>
+		   </div>
+	</div>
+</div>
+<!--footer end here-->
+</body>
+</html>

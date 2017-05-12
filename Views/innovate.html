@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>竞赛详情</title>
+<link href="./Views/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="./Views/js/jquery-1.11.0.min.js"></script>
+<!-- Custom Theme files -->
+<link href="./Views/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link  rel='stylesheet' type='text/css'>
+<link  rel='stylesheet' type='text/css'>
+<style type="text/css">
+.denglu form{
+	float: right;
+	margin-left: 0.5rem;/*欢迎和注销的位置	*/
+}
+.denglu{
+	margin-top: 0.4rem;
+	
+}
+.denglu form input{
+	font-size: 1.1rem;/*注销按钮大小*/
+}
+.denglu input{
+	font-size: 1.1rem;/*登录按钮大小*/
+	transition: 0.3s ease-in;
+	height: 100%;
+	width: 100%;
+	border: 0px;
+	background-color: #30a9f1;
+}	
+.denglu input:hover{
+	color:black ;
+	background-color: #30a9f1;
+}
+
+#fixedLayer { 
+position:fixed; 
+left: 1150px; 
+top: 700px; 
+width:85px; 
+line-height:30px; 
+background: #30A9F1;; 
+border:2px solid #08E3F9; 
+} 
+
+</style>
+</head>
+<body>
+<!--header start here-->
+<div class="banner-two">
+  <div class="header">
+	<div class="container">
+		 <div class="header-main">
+				<div class="logo">
+					<h2><a href="?">蓝色空间</a></h2>
+				</div>
+				<div class="top-nav">
+				<?php
+					if($isLogin){
+				?>
+					<div class="denglu"> <a href="?a=showLogin"><input type="submit" value="登录" >
+					</a></div>
+				<?php
+					}else{
+				?>
+					<div class="denglu">
+					<b>欢迎您，<?php echo $_SESSION['name']; ?></b>
+					<form method="post" action="?a=logout">
+					<input type="submit" name="submit" value="注销" >
+					</form>
+					</div>
+				<?php
+					}
+				?>
+				<nav class="cl-effect-20">
+					   <span class="menu"> <img src="./Views/images/icon.png" alt=""/></span>
+					<ul class="res">
+					   <li><a href="?" class="active">首页</a></li> 
+						<li><a href="?a=showActivity">空间动态</a></li> 
+						<li><a href="?a=showStudent">学子风采</a></li>
+						<li><a href="?a=showShow">荣誉展示</a></li> 
+						<li><a href="?a=showProject">项目竞赛</a></li>
+						<li><a href="?c=Message&a=showMessage">空间留言</a></li>
+						<?php 
+							if($isAdmin){ 
+						?>
+						<li><a href="?a=showBack">空间管理</a></li>
+						<?php
+							} 
+						?>
+				   </ul>
+				</nav>
+					<!-- script-for-menu -->
+						 <script>
+						   $( "span.menu" ).click(function() {
+							 $( "ul.res" ).slideToggle( 300, function() {
+							 // Animation complete.
+							  });
+							 });
+						</script>
+		        <!-- /script-for-menu -->
+				</div>
+		 <div class="clearfix"> </div>
+	  </div>
+	</div>
+ </div>
+</div>
+<!--header end here-->
+<!--single-->
+
+<div style="padding-top: 10px;padding-left: 10px;font-size: 25px"><a href="?a=showProject"><p><返回</p></a></div>
+<div class="container">
+  <!-- <div class="single"> -->
+    <img class="img-responsive" src="./Views/images/a6.jpg" alt="" style="float:left;margin:2.7em 1.5em;padding-top: 70px">
+    <div style="font-size:3.1em;margin: 0.5em 0.2em;float: right;">
+   	  <a style="font-size: 35px">大学生创新创业大赛</a>
+      <a href="#Ll"><li>大赛目的</li></a>
+      <a href="#L2"><li>参赛要求</li></a>
+      <a href="#L3"><li>参赛对象</li></a>
+      <a href="#L4"><li>赛制及赛程安排</li></a>
+      <a href="#L5"><li>大赛奖励</li></a>
+      <a href="#L6"><li>大赛组委会联系方式</li></a>
+    </div>
+    <div id="L0" style="width:80%;margin:0 auto;padding-top: 550px;">
+      <div style="text-align: center;color: #0b91f5;padding :30px 0;"><h3>第三届中国“互联网+” 大学生创新创业大赛</h3></div>
+      <p>为贯彻落实《国务院办公厅关于深化高等学校创新创业教育改革的实施意见》（国办发〔2015〕36号），进一步激发高校学生创新创业热情，展示高校创新创业教育成果，搭建大学生创新创业项目与社会投资对接平台，定于2017年3月至10月举办第三届中国“互联网+”大学生创新创业大赛。</p>
+    </div>
+    </div>
+    <div id="L1" style="width:80%;margin:0 auto;">
+      <div style="text-align: center;color: #0b91f5;padding :30px 0;"><h3>大赛目的</h3></div>
+      <p>旨在深化高等教育综合改革，激发大学生的创造力，培养造就“大众创业、万众创新”的生力军；推动赛事成果转化和产学研用紧密结合，促进“互联网+”新业态形成，服务经济提质增效升级；以创新引领创业、创业带动就业，推动高校毕业生更高质量创业就业。</p>
+      <p>重在把大赛作为深化创新创业教育改革的重要抓手，引导各地各高校主动服务创新驱动发展战略，积极开展教学改革探索，把创新创业教育融入人才培养，切实提高高校学生的创新精神、创业意识和创新创业能力。</p>
+      </div>
+    <div id="L2" style="width:80%;margin:0 auto;">
+      <div style="text-align: center;color: #0b91f5;padding :30px 0;"><h3>参赛要求</h3></div>
+      <p>参赛项目要求能够将移动互联网、云计算、大数据、人工智能、物联网等新一代信息技术与经济社会各领域紧密结合，培育基于互联网新时代的新产品、新服务、新业态、新模式；发挥互联网在促进产业升级以及信息化和工业化深度融合中的作用，促进制造业、农业、能源、环保等产业转型升级；发挥互联网在社会服务中的作用，创新网络化服务模式，促进互联网与教育、医疗、交通、金融、消费生活等深度融合。参赛项目主要包括以下类型：</br>
+		1.“互联网+”现代农业，包括农林牧渔等；</br>
+		2.“互联网+”制造业，包括智能硬件、先进制造、工业自动化、生物医药、节能环保、新材料、军工等；</br>
+		3.“互联网+”信息技术服务，包括工具软件、社交网络、媒体门户、企业服务等；</br>
+		4.“互联网+”文化创意服务，包括广播影视、设计服务、文化艺术、旅游休闲、艺术品交易、广告会展	、动漫娱乐、体育竞技等；</br>
+		5.“互联网+”商务服务，包括电子商务、消费生活、金融、财经法务、房产家居、高效物流等；</br>
+		6.“互联网+”公共服务，包括教育培训、医疗健康、交通、人力资源服务等；</br>
+		7.“互联网+”公益创业，以社会价值为导向的非盈利性创业。</br></br>
+
+		<p>参赛项目须真实、健康、合法，无任何不良信息，项目立意应弘扬正能量，践行社会主义核心价值观。参赛项目不得侵犯他人知识产权；所涉及的发明创造、专利技术、资源等必须拥有清晰合法的知识产权或物权；抄袭、盗用、提供虚假材料或违反相关法律法规一经发现即刻丧失参赛相关权利并自负一切法律责任。</p>
+
+		<p>参赛项目涉及他人知识产权的，报名时需提交完整的具有法律效力的所有人书面授权许可书、专利证书等；已完成工商登记注册的创业项目，报名时需提交单位概况、法定代表人情况、股权结构、组织机构代码复印件等相关证明材料。</p>
+    </div>
+	<div id="L3" style="width:80%;margin:0 auto;">
+	<div style="text-align: center;color: #0b91f5;padding :30px 0;"><h3>参赛对象</h3></div>
+	<p>（一）申请人应为全省普通高等学校的在校本科学生个人或创新团队（项目主持人在毕业前完成项目结题；已立项未结题的项目主持人不能申报2017年项目），鼓励跨院系、跨专业、跨年级组建团队申报项目，团队参与学生数应控制在5人以内。申请者必须品学兼优、学有余力、有较强的独立思考能力、创新意识和研究探索精神，对科学研究、科技活动或社会实践有浓厚的兴趣。鼓励跨学科、跨年级合作研究，同等条件下优先资助团队合作项目和跨学科、跨年级合作项目。跨学院的项目，由第一申请者所在学院申报，学生只能申报或参与1个项目，未结题的项目主持人不能申报本年度项目。目前已结题或获奖的省级大学生创新项目（新苗计划）、省挑战杯竞赛项目和省级学科竞赛项目，在原有研究基础上可继续深入研究的，允许申报；已获得国家级奖励或省级资助尚未结题的项目不得参与申报。</p>
+	<p>（二）项目组须由学生选定或学院配备指导教师1-2名，学院应遴选责任心强、学术水平高、学风正派、治学严谨的教学科研人员担任指导教师。指导教师需具备副高级以上职称或中级职称研究生学历或曾指导学生在校级以上（含校级竞赛）学科竞赛中获奖，鼓励项目特别是创业训练和创业实践项目聘请优秀企业家或行业专家担任指导教师。指导教师在全程起辅导作用，负责指导以学生为主的训练项目实施。同一个指导教师指导的在研项目不能超过2个。 </p>
+	<p>（三）申报项目选题要求思路新颖，目标明确，具有创新性和探索性，研究方案可行，经费预算合理。项目研究周期一般为1-2年。申报者要对研究方案进行可行性分析，并在实施过程中不断调整优化。 </p>
+	</div>
+  <div id="L4" style="width:80%;margin:0 auto;">
+	<div style="text-align: center;color: #0b91f5;padding :30px 0;"><h3>赛制及赛程安排</h3></div>
+	<p>大赛采用校级初赛、省级复赛、全国总决赛三级赛制。校级初赛由各高校负责组织，省级复赛由各省（区、市）负责组织，全国总决赛由各省（区、市）按照大赛组委会确定的配额择优遴选推荐项目。大赛组委会将综合考虑各省（区、市）报名团队数、参赛高校数和创新创业教育工作情况等因素分配名额。每所高校入选全国总决赛团队总数不超过4个。</p>
+	<p>全国共产生600个项目入围全国总决赛。通过网上评审，产生120个项目进入全国总决赛现场比赛。</p></br>
+	<p><b>赛程安排:</b></br>
+	1.参赛报名（3-5月）。参赛团队可通过登录“全国大学生创业服务网”<a href="http://cy.ncss.org.cn/" style="text-decoration: underline;word-break:break-all; ">（cy.ncss.org.cn）</a>或大赛微信公众号（名称为“大学生创业服务网”）任一方式进行报名。报名系统开放时间为2017年3月23日，截止时间由各省（区、市）根据复赛安排自行决定，但不得晚于8月31日。</br></br>
+	2.初赛复赛（6-9月）。各省（区、市）各高校登录“全国大学生创业服务网”<a href="http://cy.ncss.org.cn/" style="text-decoration: underline;word-break:break-all; ">（cy.ncss.org.cn）</a>进行报名信息的查看和管理。省级账号由大赛组委会统一创建及分配；校级账号由各省（区、市）进行创建、分配及管理。初赛复赛的比赛环节、评审方式等由各高校、各省（区、市）自行决定。各省（区、市）在9月15日前完成省级复赛，遴选参加全国总决赛的候选项目（推荐项目应有名次排序，供全国总决赛参考）。</br></br>
+	3.全国总决赛（10月中下旬）。大赛评审委员会对入围全国总决赛项目进行网上评审，择优选拔120个项目进行现场比赛，决出金、银奖。</br></br>
+	大赛组委会将通过“全国大学生创业服务网”为参赛团队提供项目展示、创业指导、投资对接等服务。各项目团队可以登录“全国大学生创业服务网”查看相关信息。各省（区、市）可以利用网站提供的资源，为参赛团队做好服务。各高校还可以通过腾讯微校<a href="http://weixiao.qq.com/shuangchuang/" style="text-decoration: underline;word-break:break-all; ">（http://weixiao.qq.com/shuangchuang/）</a>进行赛事宣传，获得项目激励和孵化指导。大学生创业服务网”）任一方式进行报名。报名系统开放时间为2017年3月23日，截止时间由各省（区、市）根据复赛安排自行决定，但不得晚于8月31日。</br>
+	</p>
+	</div>
+  <div id="L5" style="width:80%;margin:0 auto;">
+	<div style="text-align: center;color: #0b91f5;padding :30px 0;"><h3>大赛奖励</h3></div>
+	<p>大赛设30个金奖、90个银奖、480个铜奖。设最佳创意奖、最具商业价值奖、最佳带动就业奖、最具人气奖各1个。获奖项目颁发获奖证书，提供投融资对接、落地孵化等服务。</p>
+	<p>设高校集体奖20个、省市优秀组织奖10个和优秀创新创业导师若干名，颁发获奖证书及奖牌。</p></br>
+	<p>各地各高校要认真做好大赛的宣传动员和组织工作。各省（区、市）教育行政部门要组织做好省级比赛和项目推荐工作。各高校要认真组织动员团队参赛，为在校生和毕业生参与竞赛提供必要的条件和支持，做好学校初赛组织工作。鼓励教师将科技成果产业化，带领学生创新创业。同时，坚持以赛促教、以赛促学、以赛促创，积极推进高校学生创新创业训练和实践，不断提高创新创业人才培养水平，厚植“大众创业、万众创新”土壤，为建设创新型国家提供源源不断的人才智力支撑。</p>
+	<p>全国高校双创教育协作媒体联盟将协助各地教育行政部门和高校开展大赛宣传。</p>
+	</div>
+  <div id="L6" style="width:80%;margin:0 auto;">
+	<div style="text-align: center;color: #0b91f5;padding :30px 0;"><h3>大赛组委会联系方式</h3></div>
+	<p>1.大赛工作QQ群为：460798492，请每个参赛省（区、市）指定两名工作人员加入该群，便于赛事工作沟通及交流。</p></br>
+	<p>2.大赛组委会联系人：</br>
+全国高等学校学生信息咨询与就业指导中心  窦慧姣</br>
+联系电话：010-66092081，传真：010-66097332</br>
+电子邮箱：dhj1211@moe.edu.cn</br>
+地址：北京市西城区大木仓胡同37号</br>
+邮编：100816</p></br>
+	<p>西安电子科技大学　黎 娜</br>
+联系电话：029-81891890，传真：029-81891205</br>
+电子邮箱：2017plus@xidian.edu.cn</br>
+地址：陕西省西安市西沣路266号</br>
+邮编：710126</p></br>
+	<p>教育部高等教育司理工处　高 腾</br>
+联系电话：010-66096262，传真：010-66020758</br>
+电子邮箱：tenggao@moe.edu.cn</br>
+地址：北京市西城区大木仓胡同37号</br>
+邮编:100816</p>
+	<p></p>
+	<p></p>
+	<p></p>
+	</div>
+</div>
+
+<div id="fixedLayer">
+	<a href="#">↑返回顶部↑</a>
+</div>						
+<!--//single-->
+<!--footer start here-->
+<div class="footer">
+	<div class="container">
+		<div class="footer-main" style="text-align: center;">
+		    <div class="row">
+		    <div class="col-md-4 ftr-grid">
+		    	<h4><a href="#">返回顶部</a></h4>
+		    </div>
+		    <div class="col-md-4 ftr-grid">
+		    	<h4><a href="#">联系我们</a></h4>
+		    	<input type="text" value="请留下您的Email" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '请留下您的Email';}" style="margin-top: 2rem; ">
+		    	<input type="submit" value="提交">
+		    </div>
+		    <div class="col-md-4 ftr-grid">
+		    	<h4><a href="?a=showRegister">加入我们</a></h4>
+		    </div>
+		    </div>
+			<div class="clearfix"> </div>
+		</div>
+		<div class="copy-right">
+			   <p>版权所有 © 浙江科技学院 support@zust.edu.cn 浙ICP备11051284号<br> 地址：浙江·杭州市留和路318号 邮编：310023</p>
+		   </div>
+	</div>
+</div>
+<!--footer end here-->
+</body>
+</html>

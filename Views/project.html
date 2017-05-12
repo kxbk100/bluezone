@@ -1,0 +1,277 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>项目竞赛</title>
+<link href="./Views/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="./Views/js/jquery-1.11.0.min.js"></script>
+<!-- Custom Theme files -->
+<link href="./Views/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link  rel='stylesheet' type='text/css'>
+<!-- start-->
+<link rel="stylesheet" type="text/css" href="./Views/css/style_common.css" />
+<link rel="stylesheet" type="text/css" href="./Views/css/style3.css" />
+<style type="text/css">
+.denglu form{
+    float: right;
+    margin-left: 0.5rem;/*欢迎和注销的位置  */
+}
+.denglu{
+    margin-top: 0.4rem;
+    
+}
+.denglu form input{
+    font-size: 1.1rem;/*注销按钮大小*/
+}
+.denglu input{
+    font-size: 1.1rem;/*登录按钮大小*/
+    transition: 0.3s ease-in;
+    height: 100%;
+    width: 100%;
+    border: 0px;
+    background-color: #30a9f1;
+}   
+.denglu input:hover{
+    color:black ;
+    background-color: #30a9f1;
+}
+</style>
+</head>
+<body>
+<!--header start here-->
+<div class="banner-two">
+  <div class="header">
+	<div class="container">
+         <div class="header-main">
+                <div class="logo">
+                    <h2><a href="?">蓝色空间</a></h2>
+                </div>
+                <div class="top-nav">
+                <?php
+                    if($isLogin){
+                ?>
+                    <div class="denglu"> <a href="?a=showLogin&l=showProject"><input type="submit" value="登录" >
+                    </a></div>
+                <?php
+                    }else{
+                ?>
+                    <div class="denglu">
+                    <b>欢迎您，<?php echo $_SESSION['name']; ?></b>
+                    <form method="post" action="?a=logout">
+                    <input type="submit" name="submit" value="注销" >
+                    </form>
+                    </div>
+                <?php
+                    }
+                ?>
+                <nav class="cl-effect-20">
+                       <span class="menu"> <img src="./Views/images/icon.png" alt=""/></span>
+                    <ul class="res">
+                       <li><a href="?" class="active">首页</a></li> 
+                        <li><a href="?a=showActivity">空间动态</a></li> 
+                        <li><a href="?a=showStudent">学子风采</a></li>
+                        <li><a href="?a=showShow">荣誉展示</a></li> 
+                        <li><a href="?a=showProject">项目竞赛</a></li>
+                        <li><a href="?c=Message&a=showMessage">空间留言</a></li>
+                        <?php 
+                            if($isAdmin){ 
+                        ?>
+                        <li><a href="?a=showBack">空间管理</a></li>
+                        <?php
+                            } 
+                        ?>
+                   </ul>
+                </nav>
+					<!-- script-for-menu -->
+						 <script>
+						   $( "span.menu" ).click(function() {
+							 $( "ul.res" ).slideToggle( 300, function() {
+							 // Animation complete.
+							  });
+							 });
+						</script>
+		        <!-- /script-for-menu -->
+				</div>
+		 <div class="clearfix"> </div>
+	  </div>
+	</div>
+ </div>
+</div>
+<!--header end here-->
+<!--gallery  start here-->
+	<div class="container">
+		<div class="gallery-main">
+			<div class="gallery-top">
+				<h2>科创项目</h2>
+			</div>
+			<div class="gallery-bottom">
+			    <div class="view view-third">
+                    <a href="?a=showChunmeng" class="b-link-stripe b-animate-go  swipebox"  title="了解详情"><img src="./Views/images/xm1.jpg" alt="" class="img-responsive">
+                    <div class="mask">
+                    <h2> </h2>
+                        <p>校级春萌项目</p>
+                        <a href="?a=showChunmeng"><span class="gall">了解详情</span></a>
+                    </div></a>
+                </div>
+               <div class="view view-third">
+                     <a href="?a=showXinmiao" class="b-link-stripe b-animate-go  swipebox"  title="了解详情"><img src="./Views/images/xm2.jpg" alt="" class="img-responsive">
+                    <div class="mask">
+                        <h2> </h2>
+                        <p>省级新苗项目</p>
+                        <a href="?a=showXinmiao"><span class="gall">了解详情</span></a>
+                    </div></a>
+                </div>
+                <div class="view view-third">
+                     <a href="?a=showGuochuang" class="b-link-stripe b-animate-go  swipebox"  title="了解详情"><img src="./Views/images/xm3.jpg" alt="" class="img-responsive">
+                    <div class="mask">
+                        <h2> </h2>
+                        <p>国家级国创项目</p>
+                        <a href="?a=showGuochuang"><span class="gall">了解详情</span></a>
+                    </div></a>
+                </div>
+                
+             <div class="clearfix"> </div>
+             </div>
+		</div>
+	</div>
+</div>
+<link rel="stylesheet" href="./Views/css/swipebox.css">
+	<script src="./Views/js/jquery.swipebox.min.js"></script> 
+	    <script type="text/javascript">
+			jQuery(function($) {
+				$(".swipebox").swipebox();
+			});
+</script>
+
+<div class="container">
+        <div class="gallery-main">
+            <div class="gallery-top">
+                <h2>学科竞赛</h2>
+            </div>
+        </div>
+</div>
+
+<!-- PORTFOLIO -->
+
+    <div id="wrapper-container">
+    
+        <div class="container object">
+
+            <div id="main-container-image">
+                       
+                    <section class="work">
+
+                        <figure class="white">
+                            <a href="?a=showComputerDesign">
+                                <img src="./Views/images/bs1.jpg" alt="" />
+                            </a>
+                            <div id="wrapper-part-info">
+                                <div id="part-info">    
+                                    中国大学生计算机设计大赛
+                                </div>
+                            </div>
+                        </figure>   
+                        <figure class="white">
+                            <a href="?a=showChallengeCup">
+                                <img src="./Views/images/bs2.jpg" alt="" />
+                            </a>
+                            <div id="wrapper-part-info">
+                                <div id="part-info">挑战杯大赛</div>
+                            </div>
+                        </figure>
+                        <figure class="white">
+                            <a href="?a=showInnovate">
+                                <img src="./Views/images/bs3.jpg" alt="" />
+                            </a>
+                            <div id="wrapper-part-info">
+                                <div id="part-info">“互联网+”大学生创新创业大赛</div>
+                            </div>
+                        </figure>
+                        <figure class="white">
+                            <a href="?a=showOutsourcing">
+                                <img src="./Views/images/bs4.jpg" alt="" />
+                            </a>
+                            <div id="wrapper-part-info">
+                                <div id="part-info">中国大学生服务外包创新创业大赛</div>
+                            </div>
+                        </figure>
+                    </section>
+                    
+                </div>  
+                    
+            </div>
+         
+    <div id="wrapper-oldnew">
+        <div class="oldnew">
+            <div class="wrapper-oldnew-prev">
+                <div id="oldnew-prev"></div>
+            </div>
+            <div class="wrapper-oldnew-next">
+                <div id="oldnew-next"></div>
+            </div>
+        </div>
+    </div>
+
+
+<script src="./Views/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="./Views/js/jquery.scrollTo.min.js"></script>
+<script type="text/javascript" src="./Views/js/jquery.localScroll.min.js"></script>
+<script type="text/javascript" src="./Views/js/jquery-animate-css-rotate-scale.js"></script>
+<script type="text/javascript" src="./Views/js/fastclick.min.js"></script>
+<script type="text/javascript" src="./Views/js/jquery.animate-colors-min.js"></script>
+<script type="text/javascript" src="./Views/js/jquery.animate-shadow-min.js"></script>    
+<script type="text/javascript" src="./Views/js/main.js"></script>
+<script>
+
+function addLoadEvent(func) {
+    var oldonload = window.onload;
+    if (typeof window.onload != 'function') {
+        window.onload = func;
+    } else {
+        window.onload = function() {
+            if (oldonload) {
+                oldonload();
+            }
+            func();
+        }
+    }
+}
+addLoadEvent(preloader);
+
+</script>
+
+</body>
+</html>
+<!--footer start here-->
+<div class="footer">
+    <div class="container">
+        <div class="footer-main" style="text-align: center;">
+            <div class="row">
+            <div class="col-md-4 ftr-grid">
+                <h4><a href="#">返回顶部</a></h4>
+            </div>
+            <div class="col-md-4 ftr-grid">
+                <h4><a href="#">联系我们</a></h4>
+                <input type="text" value="
+请留下您的建议" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '
+请留下您的建议';}" style="margin-top: 2rem; ">
+                <input type="submit" value="提交">
+            </div>
+            <div class="col-md-4 ftr-grid">
+                <h4><a href="?a=showRegister">加入我们</a></h4>
+            </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="copy-right">
+               <p>版权所有 © 浙江科技学院 support@zust.edu.cn 浙ICP备11051284号<br> 地址：浙江·杭州市留和路318号 邮编：310023</p>
+           </div>
+    </div>
+</div>
+<!--footer end here-->
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>学子风采</title>
+
+<link href="./Views/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="./Views/js/jquery-1.11.0.min.js"></script>
+<!-- Custom Theme files -->
+<link href="./Views/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+</head>
+<style type="text/css">
+.denglu form{
+	float: right;
+	margin-left: 0.5rem;/*欢迎和注销的位置	*/
+}
+.denglu{
+	margin-top: 0.4rem;
+	
+}
+.denglu form input{
+	font-size: 1.1rem;/*注销按钮大小*/
+}
+.denglu input{
+	font-size: 1.1rem;/*登录按钮大小*/
+	transition: 0.3s ease-in;
+	height: 100%;
+	width: 100%;
+	border: 0px;
+	background-color: #30a9f1;
+}	
+.denglu input:hover{
+	color:black ;
+	background-color: #30a9f1;
+}
+
+</style>
+<body>
+<!--header start here-->
+<div class="banner-two">
+  <div class="header">
+	<div class="container">
+		 <div class="header-main">
+				<div class="logo">
+					<h2><a href="?">蓝色空间</a></h2>
+				</div>
+				<div class="top-nav">
+				<?php
+					if($isLogin){
+				?>
+					<div class="denglu"> <a href="?a=showLogin&l=showStudent"><input type="submit" value="登录" >
+					</a></div>
+				<?php
+					}else{
+				?>
+					<div class="denglu">
+					<b>欢迎您，<?php echo $_SESSION['name']; ?></b>
+					<form method="post" action="?a=logout">
+					<input type="submit" name="submit" value="注销" >
+					</form>
+					</div>
+				<?php
+					}
+				?>
+				<nav class="cl-effect-20">
+					   <span class="menu"> <img src="./Views/images/icon.png" alt=""/></span>
+					<ul class="res">
+					   <li><a href="?" class="active">首页</a></li> 
+						<li><a href="?a=showActivity">空间动态</a></li> 
+						<li><a href="?a=showStudent">学子风采</a></li>
+						<li><a href="?a=showShow">荣誉展示</a></li> 
+						<li><a href="?a=showProject">项目竞赛</a></li>
+						<li><a href="?c=Message&a=showMessage">空间留言</a></li>
+						<?php 
+							if($isAdmin){ 
+						?>
+						<li><a href="?a=showBack">空间管理</a></li>
+						<?php
+							} 
+						?>
+				   </ul>
+				</nav>
+					<!-- script-for-menu -->
+						 <script>
+						   $( "span.menu" ).click(function() {
+							 $( "ul.res" ).slideToggle( 300, function() {
+							 // Animation complete.
+							  });
+							 });
+						</script>
+		        <!-- /script-for-menu -->
+				</div>
+		 <div class="clearfix"> </div>
+	  </div>
+	</div>
+ </div>
+</div>
+</head>
+<body>
+<div class="container">
+		<div class="gallery-main">
+            <div class="gallery-top">
+				<h2>学子风采</h2>
+			</div>
+		</div>
+</div>
+
+<!-- CACHE -->
+<div class="cache"></div>
+<!-- PORTFOLIO -->
+
+	<div id="wrapper-container">
+    
+		<div class="container object">
+
+			<div id="main-container-image">
+                       
+					<section class="work">
+
+						<figure class="white">
+							<a href="?a=showIntroduct1">
+								<img src="./Views/images/cx1.jpg" alt="" />
+							    <dl>
+									<dt>简介</dt>
+									<dd>男，2013级信息与计算科学学生。理学院计算机兴趣小组（shadow）成员，2015年获浙江科技学院理学院“璀璨之星”称号，2015年获浙江科技学院“年度人物”提名奖称号</dd>	
+								</dl>
+							</a>
+                            <div id="wrapper-part-info">
+                            	<a href="?a=showIntroduct1"><div id="part-info">陈璇</div></a>
+							</div>
+                        </figure>
+
+                        <figure class="white">
+							<a href="?a=showIntroduct2">
+								<img src="./Views/images/hyf1.jpg" alt="" />
+							    <dl>
+									<dt>简介</dt>
+									<dd>男，2014级信息与计算科学学生，理学院计算机兴趣小组（shadow）成员。</dd>	
+								</dl>
+							</a>
+                            <div id="wrapper-part-info">
+                            	<a href="?a=showIntroduct2"><div id="part-info">华益峰</div></a>
+							</div>
+                        </figure>
+
+                        <figure class="white">
+							<a href="?a=showIntroduct3">
+								<img src="./Views/images/wbb1.jpg" alt="" />
+							     <dl>
+									<dt>简介</dt>
+									<dd>男，2013级信息与计算科学学生。理学院计算机兴趣小组（shadow）成员，2015年获浙江科技学院理学院 “璀璨之星”称号，并获得浙江科技学院“年度人物”提名奖称号。</dd>	
+								</dl>
+							</a>
+                            <div id="wrapper-part-info">
+                            	<a href="?a=showIntroduct3"><div id="part-info">王斌斌</div></a>
+							</div>
+                        </figure>
+
+                        <figure class="white">
+							<a href="?a=showIntroduct4">
+								<img src="./Views/images/wk1.jpg" alt="" />
+							    <dl>
+									<dt>简介</dt>
+									<dd>汪锴：男，2013级软件工程学生。出生于1995年1月，湖北黄冈蕲春人。实践指导教师：岑岗、莫云峰等。</dd>	
+								</dl>
+							</a>
+                            <div id="wrapper-part-info">
+                            	<a href="?a=showIntroduct4"><div id="part-info">汪锴</div>
+							</div>
+                        </figure>
+
+                        <figure class="white">
+							<a href="?a=showIntroduct5">
+								<img src="./Views/images/hh1.jpg" alt="" />
+							    <dl>
+									<dt>简介</dt>
+									<dd>简介：男，2015级软件工程专业学生。信息学院蓝色空间（bluezone）成员。实践指导教师：实践指导教师：岑岗、马伟锋等。</dd>	
+								</dl>
+							</a>
+                            <div id="wrapper-part-info">
+                            	<a href="?a=showIntroduct5"><div id="part-info">胡昊</div>
+							</div>
+                        </figure>
+
+                        <figure class="white">
+							<a href="?a=showIntroduct6">
+								<img src="./Views/images/cjn1.jpg" alt="" />
+							    <dl>
+							        <dt>简介</dt>
+									<dd>简介：男，2015级软件工程专业学生。信息学院蓝色空间（bluezone）成员。实践指导教师：岑岗、程志刚、马伟锋等。</dd>	
+								</dl>
+							</a>
+                            <div id="wrapper-part-info">
+                            	<a href="?a=showIntroduct6"><div id="part-info">蔡靖楠</div>
+							</div>
+                        </figure>
+
+                        <figure class="white">
+							<a href="?a=showIntroduct7">
+								<img src="./Views/images/dwf1.jpg" alt="" />
+							    <dl>
+									<dt>简介</dt>
+									<dd>女，2015级计算机科学与技术。信息学院蓝色空间（bluezone）成员。实践指导教师：岑岗，程志刚等。</dd>	
+								</dl>
+							</a>
+                            <div id="wrapper-part-info">
+                            	<a href="?a=showIntroduct7"><div id="part-info">戴文飞</div>
+							</div>
+                        </figure>
+
+                        <figure class="white">
+							<a href="?a=showIntroduct8">
+								<img src="./Views/images/sq1.jpg" alt="" />
+							    <dl>
+									<dt>简介</dt>
+									<dd>简介：男，2015级软件工程专业学生。2016年获省政府奖学金，浙江科技学院校一等奖奖学金。信息学院蓝色空间（bluezone）成员。</dd>	
+								</dl>
+							</a>
+                            <div id="wrapper-part-info">
+                            	<a href="?a=showIntroduct8"><div id="part-info">孙奇</div>
+							</div>
+                        </figure>	
+
+							
+                        
+					</section>
+                    
+				</div>	
+            	    
+			</div>
+         
+    <div id="wrapper-oldnew">
+    	<div class="oldnew">
+        	<div class="wrapper-oldnew-prev">
+            	<div id="oldnew-prev"></div>
+        	</div>
+            <div class="wrapper-oldnew-next">
+            	<div id="oldnew-next"></div>
+    		</div>
+        </div>
+	</div>     
+     <!--footer start here-->
+<div class="footer">
+	<div class="container">
+		<div class="footer-main" style="text-align: center;">
+		    <div class="row">
+		    <div class="col-md-4 ftr-grid">
+		    	<h4><a href="#">返回顶部</a></h4>
+		    </div>
+		    <div class="col-md-4 ftr-grid">
+		    	<h4><a href="#">联系我们</a></h4>
+		    	<input type="text" value="请留下您的建议" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '请留下您的建议';}" style="margin-top: 2rem; ">
+		    	<input type="submit" value="提交">
+		    </div>
+		    <div class="col-md-4 ftr-grid">
+		    	<h4><a href="./Views/login.html">加入我们</a></h4>
+		    </div>
+		    </div>
+			<div class="clearfix"> </div>
+		</div>
+		<div class="copy-right">
+			   <p>版权所有 © 浙江科技学院 support@zust.edu.cn 浙ICP备11051284号<br> 地址：浙江·杭州市留和路318号 邮编：310023</p>
+		   </div>
+	</div>
+</div>
+
+
+
+<!-- SCRIPT -->
+
+<script src="./Views/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="./Views/js/jquery.scrollTo.min.js"></script>
+<script type="text/javascript" src="./Views/js/jquery.localScroll.min.js"></script>
+<script type="text/javascript" src="./Views/js/jquery-animate-css-rotate-scale.js"></script>
+<script type="text/javascript" src="./Views/js/fastclick.min.js"></script>
+<script type="text/javascript" src="./Views/js/jquery.animate-colors-min.js"></script>
+<script type="text/javascript" src="./Views/js/jquery.animate-shadow-min.js"></script>    
+<script type="text/javascript" src="./Views/js/main.js"></script>
+<script>
+
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(preloader);
+
+</script>
+
+</body>
+</html>
