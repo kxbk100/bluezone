@@ -87,7 +87,7 @@ class MySQLDB{
 	//如果失败，就处理错误，然后结束；
 	//如果成功，就“直接返回”，对直接结果不做任何处理
 	private function query( $sql ){
-		$result = mysqli_query($this->link,$sql);
+		$result = mysql_query($sql,$this->link);
 		if( $result === false ){
 			echo "<p>发生错误了，详细请参考：";
 			echo "<br />错误语句：" . $sql ;
@@ -114,7 +114,7 @@ class MySQLDB{
 		//这里才准备返回二维数组
 		//此时，$result 是“结果集”（数据集）
 		$arr = array();	//空数组，目的是为了装该fetch出来的多行数据（$rec，是一维数组)
-		while($rec = mysqli_fetch_assoc( $result ) ){
+		while($rec = mysql_fetch_assoc( $result ) ){
 			$arr[] = $rec;	//
 		}
 		return $arr;
@@ -127,7 +127,7 @@ class MySQLDB{
 
 		//这里才准备返回一维数组
 		//此时，$result 是“结果集”（数据集）
-		if( $rec = mysqli_fetch_assoc ( $result ) ){
+		if( $rec = mysql_fetch_assoc ( $result ) ){
 			return $rec;	//如果有数据，则返回该行
 		}
 		return array();		//否则，返回空数组
@@ -140,7 +140,7 @@ class MySQLDB{
 
 		//这里才准备返回一个
 		//此时，$result 是“结果集”（数据集）
-		if( $rec = mysqli_fetch_row ( $result ) ){
+		if( $rec = mysql_fetch_row ( $result ) ){
 			return $rec[0];	//如果有数据，则返回该唯一数据
 		}
 		return false;	//否则，返回false，表示没有数据！
@@ -155,7 +155,7 @@ class MySQLDB{
 	}
 	//此函数专门进行连接数据的最初始工作：
 	private function connect(){
-		$this->link = mysqli_connect("{$this->host}:{$this->port}","{$this->user}","{$this->pass}")
+		$this->link = mysql_connect("{$this->host}:{$this->port}","{$this->user}","{$this->pass}")
 						or die('数据库服务器连接失败！');
 		$this->select_charset($this->charset);
 		$this->select_database($this->dbname);
