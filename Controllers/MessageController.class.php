@@ -29,7 +29,7 @@
 
 			$result = $obj->getAllMessage();
 			$count = count($result);
-			include_once "./Views/Message.html";
+			include_once "./Views/message.html";
 
 		}
 
